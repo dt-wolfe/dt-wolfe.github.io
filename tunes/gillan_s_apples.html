@@ -1,0 +1,1309 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <title>Practice</title>
+        <link rel="stylesheet" href="../css/abcjs-audio.css">
+        <script src="../js/abcjs-basic-min.js" defer></script>
+        <style>
+            main {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            .tune_selector,
+            .audio_controls {
+                display: flex;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            button {
+                padding: 10px;
+                margin: 10px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            select {
+                border: 1px solid;
+                border-radius: 12px;
+                padding: 10px 12px;
+                outline: none;
+                transition: border-color 0.2s;
+                font-size: 16px;
+                min-width: 120px;
+            }
+
+            .loop-active {
+                background-color: red;
+                color: white;
+                font-weight: bold;
+            }
+
+            .warp-active {
+                background-color: green;
+                color: white;
+                font-weight: bold;
+            }
+
+            #audio_paper {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            const render_abc = [`X:5
+T:Gillan's Apples
+L:1/8
+M:6/8
+Q:3/8=126
+I:linebreak 
+K:D
+def | g3(B2 A) | GBA GBd | (e{/a}ge) edB | 
+dBA (A{/d}BA) | GBd gdB | GBd g2 (a| b)ag fge | edc :: d2 (e| f)aa faa | faa agf | gbb gbb | 
+gbb bag | faa faa | faa a2 (a|b)ag fge | edc :|
+`,
+`X:1
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) |`,
+`X:2
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBA GBd |`,
+`X:3
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(e{/a}ge) edB |`,
+`X:4
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+dBA (A{/d}BA) |`,
+`X:5
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB |`,
+`X:6
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBd g2 (a |`,
+`X:7
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:8
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc[Q:3/8=126] def |`,
+`X:9
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) |`,
+`X:10
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBA GBd |`,
+`X:11
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(e{/a}ge) edB |`,
+`X:12
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ dBA (A{/d}BA) |`,
+`X:13
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB |`,
+`X:14
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBd g2 (a |`,
+`X:15
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:16
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc d2 (e |`,
+`X:17
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa |`,
+`X:18
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa agf |`,
+`X:19
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |`,
+`X:20
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ gbb bag |`,
+`X:21
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa |`,
+`X:22
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa a2 (a |`,
+`X:23
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:24
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc d2 (e |`,
+`X:25
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa |`,
+`X:26
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa agf |`,
+`X:27
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |`,
+`X:28
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ gbb bag |`,
+`X:29
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa |`,
+`X:30
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa a2 (a |`,
+`X:31
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:32
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc |]`,
+`X:1
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) | GBA GBd |`,
+`X:2
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(e{/a}ge) edB | dBA (A{/d}BA) |`,
+`X:3
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a |`,
+`X:4
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc[Q:3/8=126] def |`,
+`X:5
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) | GBA GBd |`,
+`X:6
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(e{/a}ge) edB |  dBA (A{/d}BA) |`,
+`X:7
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a |`,
+`X:8
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc d2 (e |`,
+`X:9
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf |`,
+`X:10
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |  gbb bag |`,
+`X:11
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a |`,
+`X:12
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc d2 (e |`,
+`X:13
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf |`,
+`X:14
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |  gbb bag |`,
+`X:15
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a |`,
+`X:16
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc |]`,
+`X:1
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) | GBA GBd | (e{/a}ge) edB | dBA (A{/d}BA) |`,
+`X:2
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a | b)ag fge | edc[Q:3/8=126] def |`,
+`X:3
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) | GBA GBd | (e{/a}ge) edB |  dBA (A{/d}BA) |`,
+`X:4
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a | b)ag fge | edc d2 (e |`,
+`X:5
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |`,
+`X:6
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a | b)ag fge | edc d2 (e |`,
+`X:7
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |`,
+`X:8
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a | b)ag fge | edc |]`,
+`X:1
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) | GBA GBd | (e{/a}ge) edB | dBA (A{/d}BA) |  GBd gdB | GBd g2 (a | b)ag fge | edc[Q:3/8=126] def |`,
+`X:2
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) | GBA GBd | (e{/a}ge) edB |  dBA (A{/d}BA) |  GBd gdB | GBd g2 (a | b)ag fge | edc d2 (e |`,
+`X:3
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |  faa faa | faa a2 (a | b)ag fge | edc d2 (e |`,
+`X:4
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |  faa faa | faa a2 (a | b)ag fge | edc |]`];
+            const audio_abc = [`X:5
+T:Gillan's Apples
+L:1/8
+M:6/8
+Q:3/8=126
+I:linebreak 
+K:D
+def | g3(B2 A) | GBA GBd | (ea1/16 ge) edB | 
+dBA (Ad1/16 BA) | GBd gdB | GBd g2 (a| b)ag fge | edc :: d2 (e| f)aa faa | faa agf | gbb gbb | 
+gbb bag | faa faa | faa a2 (a|b)ag fge | edc :|
+`,
+`X:1
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) |`,
+`X:2
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBA GBd |`,
+`X:3
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(ea1/16 ge) edB |`,
+`X:4
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+dBA (Ad1/16 BA) |`,
+`X:5
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB |`,
+`X:6
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBd g2 (a |`,
+`X:7
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:8
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc[Q:3/8=126] def |`,
+`X:9
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) |`,
+`X:10
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBA GBd |`,
+`X:11
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(ea1/16 ge) edB |`,
+`X:12
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ dBA (Ad1/16 BA) |`,
+`X:13
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB |`,
+`X:14
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+GBd g2 (a |`,
+`X:15
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:16
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc d2 (e |`,
+`X:17
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa |`,
+`X:18
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa agf |`,
+`X:19
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |`,
+`X:20
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ gbb bag |`,
+`X:21
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa |`,
+`X:22
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa a2 (a |`,
+`X:23
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:24
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc d2 (e |`,
+`X:25
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa |`,
+`X:26
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa agf |`,
+`X:27
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |`,
+`X:28
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ gbb bag |`,
+`X:29
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa |`,
+`X:30
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+faa a2 (a |`,
+`X:31
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge |`,
+`X:32
+T:1 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+edc |]`,
+`X:1
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) | GBA GBd |`,
+`X:2
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(ea1/16 ge) edB | dBA (Ad1/16 BA) |`,
+`X:3
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a |`,
+`X:4
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc[Q:3/8=126] def |`,
+`X:5
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) | GBA GBd |`,
+`X:6
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+(ea1/16 ge) edB |  dBA (Ad1/16 BA) |`,
+`X:7
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a |`,
+`X:8
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc d2 (e |`,
+`X:9
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf |`,
+`X:10
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |  gbb bag |`,
+`X:11
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a |`,
+`X:12
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc d2 (e |`,
+`X:13
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf |`,
+`X:14
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+gbb gbb |  gbb bag |`,
+`X:15
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a |`,
+`X:16
+T:2 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)ag fge | edc |]`,
+`X:1
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) | GBA GBd | (ea1/16 ge) edB | dBA (Ad1/16 BA) |`,
+`X:2
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a | b)ag fge | edc[Q:3/8=126] def |`,
+`X:3
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) | GBA GBd | (ea1/16 ge) edB |  dBA (Ad1/16 BA) |`,
+`X:4
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ GBd gdB | GBd g2 (a | b)ag fge | edc d2 (e |`,
+`X:5
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |`,
+`X:6
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a | b)ag fge | edc d2 (e |`,
+`X:7
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |`,
+`X:8
+T:4 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faa faa | faa a2 (a | b)ag fge | edc |]`,
+`X:1
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+def | g3 (B2 A) | GBA GBd | (ea1/16 ge) edB | dBA (Ad1/16 BA) |  GBd gdB | GBd g2 (a | b)ag fge | edc[Q:3/8=126] def |`,
+`X:2
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+g3 (B2 A) | GBA GBd | (ea1/16 ge) edB |  dBA (Ad1/16 BA) |  GBd gdB | GBd g2 (a | b)ag fge | edc d2 (e |`,
+`X:3
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |  faa faa | faa a2 (a | b)ag fge | edc d2 (e |`,
+`X:4
+T:8 Bars - Gillan's Apples
+L:1/8
+Q:3/8=126
+M:6/8
+K:D
+V:1 treble 
+V:1
+f)aa faa | faa agf | gbb gbb |  gbb bag |  faa faa | faa a2 (a | b)ag fge | edc |]`];
+
+            var currentTune = 0;
+            var synthControl;
+            var abcOptions = {
+                add_classes: true,
+                responsive: "resize"
+            };
+            var isLooping;
+
+            function load() {
+                document.querySelector(".previous").addEventListener("click", previous);
+                document.querySelector(".next").addEventListener("click", next);
+                document.querySelector(".loop").addEventListener("click", loop);
+                document.querySelector(".start").addEventListener("click", start);
+                document.querySelector(".restart").addEventListener("click", restart);
+                document.querySelector(".warp50").addEventListener("click", (e) => warp(50, e.currentTarget));
+                document.querySelector(".warp75").addEventListener("click", (e) => warp(75, e.currentTarget));
+                document.querySelector(".warp100").addEventListener("click", (e) => warp(100, e.currentTarget));
+
+                // Populate the dropdown
+                const tuneSelect = document.getElementById("tuneSelect");
+                render_abc.forEach((tune, index) => {
+                    const option = document.createElement("option");
+                    option.value = index;
+                    let title = (tune.match(/\nT:\s*(.+)/) || [null, "Untitled"])[1].trim()
+                    option.textContent = `${index + 1} - ${title}`;
+                    tuneSelect.appendChild(option);
+                });
+
+                // Listen for selection changes
+                tuneSelect.addEventListener("change", function () {
+                    currentTune = parseInt(this.value);
+                    setTune(true);
+                });
+
+                if (ABCJS.synth.supportsAudio()) {
+                    synthControl = new ABCJS.synth.SynthController();
+                    synthControl.load("#audio", false, { displayLoop: true, displayRestart: true, displayPlay: true, displayProgress: true, displayWarp: true });
+                } else {
+                    console.log("Audio is not supported in this browser")
+                }
+                setTune(false);
+            }
+
+            function loop() {
+                let el = document.querySelector(".loop")
+                if (synthControl) {
+                    isLooping = !isLooping;
+                    synthControl.toggleLoop();
+                    el.classList.toggle("loop-active");
+                }
+            }
+
+            function start() {
+                if (synthControl) {
+                    synthControl.play();
+                }
+            }
+
+            function restart() {
+                if (synthControl) {
+                    synthControl.restart();
+                }
+            }
+
+            function warp(amount, el) {
+                if (synthControl) {
+                    console.log("warp", amount);
+                    synthControl.setWarp(amount);
+
+                    document.querySelectorAll(".warp50, .warp75, .warp100").forEach(btn => {
+                        btn.classList.remove("warp-active");
+                    });
+
+                    el.classList.add("warp-active");
+                }
+            }
+
+            function setTune(userAction) {
+                synthControl.disable(true);
+                document.getElementById("tuneSelect").value = currentTune;
+
+                // Render visual ABC
+                var visualObj = ABCJS.renderAbc("render_paper", render_abc[currentTune], abcOptions)[0];
+
+                // Prepare audio ABC
+                var audioObj = ABCJS.renderAbc("audio_paper", audio_abc[currentTune], {})[0];
+
+                if (synthControl) {
+                    synthControl.setTune(audioObj, userAction).then(function (response) {
+                        console.log("Audio successfully loaded.");
+
+                        if (isLooping) {
+                            synthControl.toggleLoop();
+                            document.querySelector(".loop").classList.add("loop-active");
+                        }
+                    }).catch(function (error) {
+                        console.warn("Audio problem:", error);
+                    });
+                }
+            }
+
+
+            function previous() {
+                currentTune--;
+                if (currentTune < 0)
+                    currentTune = render_abc.length - 1;
+                setTune(true);
+            }
+
+            function next() {
+                currentTune++;
+                if (currentTune >= render_abc.length)
+                    currentTune = 0;
+                setTune(true);
+            }
+        </script>
+    </head>
+
+    <body onload="load()">
+        <header>
+        </header>
+        <div class="container">
+            <main>
+                <div class="button_container">
+                    <div class="tune_selector">
+                        <button class="previous">Previous Tune</button>
+                        <select id="tuneSelect" aria-label="Select tune"></select>
+                        <button class="next">Next Tune</button>
+                    </div>
+                    <div class="audio_controls">
+                        <button class="start">Start/Pause</button>
+                        <button class="restart">Restart</button>
+                        <button class="loop">Loop</button>
+                        <button class="warp50">50%</button>
+                        <button class="warp75">75%</button>
+                        <button class="warp100">100%</button>
+                    </div>
+                </div>
+                <div id="render_paper"></div>
+                <div id="audio_paper"></div>
+                <div id="audio"></div>
+            </main>
+        </div>
+    </body>
+
+    </html>
+    
