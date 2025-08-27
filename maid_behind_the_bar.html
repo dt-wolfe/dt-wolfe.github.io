@@ -1,0 +1,1513 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ABCJS Tunebook - Render & Playback</title>
+    <link rel="stylesheet" href="css/abcjs-audio.css">
+    <script src="js/abcjs-basic-min.js" defer></script>
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --panel: #121924;
+            --ink: #dbe6ff;
+            --muted: #9cb0d9;
+            --accent: #6aa7ff;
+            --border: #1f2a3a;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 15px/1.4 system-ui, sans-serif;
+        }
+
+        .wrap {
+            max-width: 95%;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: clamp(18px, 2vw, 22px);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            overflow: hidden;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .meta {
+            padding: 14px;
+        }
+
+        label {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        select {
+            background: #0e1520;
+            color: var(--ink);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 12px;
+            outline: none;
+            transition: border-color .2s;
+        }
+
+        #paper_audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Break It Down</h1>
+        </header>
+
+        <div class="card">
+            <div class="controls">
+                <div>
+                    <label for="tuneSelect">Tune</label><br />
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <button id="prevTune">◀</button>
+                        <select id="tuneSelect" aria-label="Select tune"></select>
+                        <button id="nextTune">▶</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="paper"></div>
+            <div id="paper_audio"></div>
+            <div id="audio"></div>
+            <div class="meta"><span id="nowPlaying">Ready.</span><a id="midiLink" href="#" style="display:none"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const TUNEBOOK_DISPLAY_ONLY = `
+X:10
+T:The Maid Behind the Bar
+L:1/4
+M:2/2
+Q:1/2=120
+K:D
+(D/E/) |: F/A/A/{/d}(B/ A/F/)E/D/ | F/A/A/{/d}(B/ A) d/e/ | f/(B/{/d}B/A/) B/c/d/(e/ |  f) g/f/ e/(d/B/A/) |
+F/A/A/{/d}(B/ A/F/)E/D/ | F/A/A/{/d}(B/ A) d/e/ | f/(B/{/d}B/A/) B/c/d/(B/ |1  A/F/)E/F/ D (D/E/) :|2 A/F/)E/F/ D3/2 (e/ ||
+|: f/g/)a/g/ f/d/d/e/ | f/d/a/d/ f/d/d/(f/ |  e/f/)g/a/ b/e/e/(f/ | (3g/f/e/) b/e/ g/e/e/(a/ |
+f/g/)a/(f/ b) a/f/ | d/e/f/(d/ e) d/e/ |  f/(B/{/d}B/A/) B/c/d/(B/ |1 A/F/)E/F/ D3/2 (e/ :|2 A/F/)E/F/ D3/2 |]
+
+X:1
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAA{/d}(B AF)ED |
+X:2
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B A2) de |
+X:3
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(e |
+X:4
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f2) gf e(dBA) |
+X:5
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED |
+X:6
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B A2) de |
+X:7
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(B |
+X:8
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+AF)EF D2 (DE) |
+X:9
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED |
+X:10
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B A2) de |
+X:11
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(e |
+X:12
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ f2) gf e(dBA) |
+X:13
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED |
+X:14
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B A2) de |
+X:15
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) BcdB |
+X:16
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+AFEF D3 e ||
+X:17
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde |
+X:18
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ fdad fdd(f |
+X:19
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f |
+X:20
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(3gfe) be gee(a |
+X:21
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af |
+X:22
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+def(d e2) de |
+X:23
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(B |
+X:24
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ AF)EF D3 e |
+X:25
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde |
+X:26
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fdad fdd(f |
+X:27
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f |
+X:28
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(3gfe) be gee(a |
+X:29
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af |
+X:30
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ def(d e2) de |
+X:31
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) BcdB |
+X:32
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+AFEF D3 |]
+X:1
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAA{/d}(B AF)ED | FAA{/d}(B A2) de |
+X:2
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(e | f2) gf e(dBA) |
+X:3
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED | FAA{/d}(B A2) de |
+X:4
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(B | AF)EF D2 (DE) |
+X:5
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED | FAA{/d}(B A2) de |
+X:6
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(e | $ f2) gf e(dBA) |
+X:7
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED | FAA{/d}(B A2) de |
+X:8
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) BcdB | AFEF D3 e ||
+X:9
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | $ fdad fdd(f |
+X:10
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f | (3gfe) be gee(a |
+X:11
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | def(d e2) de |
+X:12
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) Bcd(B | $ AF)EF D3 e |
+X:13
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | fdad fdd(f |
+X:14
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f | (3gfe) be gee(a |
+X:15
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | $ def(d e2) de |
+X:16
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(B{/d}BA) BcdB | AFEF D3 |]
+X:1
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) Bcd(e | f2) gf e(dBA) |
+X:2
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) Bcd(B | AF)EF D2 (DE) |
+X:3
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) Bcd(e | $ f2) gf e(dBA) |
+X:4
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) BcdB | AFEF D3 e ||
+X:5
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | $ fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a |
+X:6
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | def(d e2) de | f(B{/d}BA) Bcd(B | $ AF)EF D3 e |
+X:7
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a |
+X:8
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | $ def(d e2) de | f(B{/d}BA) BcdB | AFEF D3 |]
+X:1
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) Bcd(e | f2) gf e(dBA) | FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) Bcd(B | AF)EF D2 (DE) |
+X:2
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) Bcd(e | $ f2) gf e(dBA) | FAA{/d}(B AF)ED | FAA{/d}(B A2) de | f(B{/d}BA) BcdB | AFEF D3 e ||
+X:3
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | $ fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a | fg)a(f b2) af | def(d e2) de | f(B{/d}BA) Bcd(B | $ AF)EF D3 e |
+X:4
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a | fg)a(f b2) af | $ def(d e2) de | f(B{/d}BA) BcdB | AFEF D3 |]
+`;
+
+        const TUNEBOOK_AUDIO_ONLY = `
+X:10
+T:The Maid Behind the Bar
+L:1/4
+M:2/2
+Q:1/2=120
+K:D
+(D/E/) |: F/A/A/d1/16(B/ A/F/)E/D/ | F/A/A/d1/16(B/ A) d/e/ | f/(B/d1/16 B/A/) B/c/d/(e/ |  f) g/f/ e/(d/B/A/) |
+F/A/A/d1/16(B/ A/F/)E/D/ | F/A/A/d1/16(B/ A) d/e/ | f/(B/d1/16 B/A/) B/c/d/(B/ |1  A/F/)E/F/ D (D/E/) :|2 A/F/)E/F/ D3/2 (e/ ||
+|: f/g/)a/g/ f/d/d/e/ | f/d/a/d/ f/d/d/(f/ |  e/f/)g/a/ b/e/e/(f/ | (3g/f/e/) b/e/ g/e/e/(a/ |
+f/g/)a/(f/ b) a/f/ | d/e/f/(d/ e) d/e/ |  f/(B/d1/16 B/A/) B/c/d/(B/ |1 A/F/)E/F/ D3/2 (e/ :|2 A/F/)E/F/ D3/2 |]
+
+X:1
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAAd1/16(B AF)ED |
+X:2
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B A2) de |
+X:3
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(e |
+X:4
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f2) gf e(dBA) |
+X:5
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED |
+X:6
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B A2) de |
+X:7
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(B |
+X:8
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+AF)EF D2 (DE) |
+X:9
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED |
+X:10
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B A2) de |
+X:11
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(e |
+X:12
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ f2) gf e(dBA) |
+X:13
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED |
+X:14
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B A2) de |
+X:15
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) BcdB |
+X:16
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+AFEF D3 e ||
+X:17
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde |
+X:18
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ fdad fdd(f |
+X:19
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f |
+X:20
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(3gfe) be gee(a |
+X:21
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af |
+X:22
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+def(d e2) de |
+X:23
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(B |
+X:24
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ AF)EF D3 e |
+X:25
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde |
+X:26
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fdad fdd(f |
+X:27
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f |
+X:28
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(3gfe) be gee(a |
+X:29
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af |
+X:30
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+$ def(d e2) de |
+X:31
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) BcdB |
+X:32
+T:1 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+AFEF D3 |]
+X:1
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAAd1/16(B AF)ED | FAAd1/16(B A2) de |
+X:2
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(e | f2) gf e(dBA) |
+X:3
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED | FAAd1/16(B A2) de |
+X:4
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(B | AF)EF D2 (DE) |
+X:5
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED | FAAd1/16(B A2) de |
+X:6
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(e | $ f2) gf e(dBA) |
+X:7
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED | FAAd1/16(B A2) de |
+X:8
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) BcdB | AFEF D3 e ||
+X:9
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | $ fdad fdd(f |
+X:10
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f | (3gfe) be gee(a |
+X:11
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | def(d e2) de |
+X:12
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) Bcd(B | $ AF)EF D3 e |
+X:13
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | fdad fdd(f |
+X:14
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+ef)ga bee(f | (3gfe) be gee(a |
+X:15
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | $ def(d e2) de |
+X:16
+T:2 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+f(Bd1/16 BA) BcdB | AFEF D3 |]
+X:1
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) Bcd(e | f2) gf e(dBA) |
+X:2
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) Bcd(B | AF)EF D2 (DE) |
+X:3
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) Bcd(e | $ f2) gf e(dBA) |
+X:4
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) BcdB | AFEF D3 e ||
+X:5
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | $ fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a |
+X:6
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | def(d e2) de | f(Bd1/16 BA) Bcd(B | $ AF)EF D3 e |
+X:7
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a |
+X:8
+T:4 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fg)a(f b2) af | $ def(d e2) de | f(Bd1/16 BA) BcdB | AFEF D3 |]
+X:1
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+(DE) | FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) Bcd(e | f2) gf e(dBA) | FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) Bcd(B | AF)EF D2 (DE) |
+X:2
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) Bcd(e | $ f2) gf e(dBA) | FAAd1/16(B AF)ED | FAAd1/16(B A2) de | f(Bd1/16 BA) BcdB | AFEF D3 e ||
+X:3
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | $ fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a | fg)a(f b2) af | def(d e2) de | f(Bd1/16 BA) Bcd(B | $ AF)EF D3 e |
+X:4
+T:8 Bars - The Maid Behind the Bar
+L:1/8
+Q:1/2=120
+M:2/2
+I:linebreak $
+K:D
+V:1 treble 
+V:1
+fgag fdde | fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a | fg)a(f b2) af | $ def(d e2) de | f(Bd1/16 BA) BcdB | AFEF D3 |]
+`;
+
+        let tunes = [];
+        let current = {
+            index: 0,
+            visualObj: null,
+            audioVisualObj: null,
+            synthControl: null
+        };
+        let audioContext = null;
+        let loopBtnEl = null;
+
+        function splitTunebook(abc) {
+            return abc.split(/\n(?=X:\s*\d+)/g).map(s => s.trim()).filter(Boolean).map(block => ({
+                abc: block,
+                title: (block.match(/\nT:\s*(.+)/) || [null, "Untitled"])[1].trim()
+            }));
+        }
+
+        function fillSelect() {
+            const sel = document.getElementById('tuneSelect');
+            sel.innerHTML = '';
+            tunes.forEach((t, i) => {
+                const opt = document.createElement('option');
+                opt.value = i;
+                opt.textContent = `${i + 1}. ${t.display.title}`;
+                sel.appendChild(opt);
+            });
+            sel.value = current.index;
+        }
+
+        function renderTune(index) {
+            if (index < 0) index = tunes.length - 1;
+            if (index >= tunes.length) index = 0;
+            current.index = index;
+            document.getElementById('tuneSelect').value = index;
+
+            const paper = document.getElementById('paper');
+            paper.innerHTML = '';
+            const paper_audio = document.getElementById('paper_audio');
+            paper_audio.innerHTML = '';
+
+            const visualObjs = ABCJS.renderAbc(paper, tunes[index].display.abc, {
+                responsive: 'resize',
+                oneSvgPerLine: false,
+                wrap: { preferredMeasuresPerLine: 4 },
+                paddingright: 40,
+                paddingtop: 10,
+                paddingbottom: 20,
+                add_classes: true
+            });
+
+            current.visualObj = visualObjs[0];
+
+            const audioVisualObjs = ABCJS.renderAbc(paper_audio, tunes[index].audio.abc);
+            current.audioVisualObj = audioVisualObjs[0];
+
+            document.getElementById('nowPlaying').textContent = `Loaded: ${tunes[index].display.title}`;
+            setupAudio();
+        }
+
+        function setupAudio() {
+            const audioEl = document.getElementById('audio');
+            audioEl.innerHTML = '';
+
+            if (!ABCJS.synth.supportsAudio()) {
+                audioEl.textContent = 'Audio not supported.';
+                return;
+            }
+
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            const synthControl = new ABCJS.synth.SynthController();
+            synthControl.load('#audio', null, {
+                displayPlay: true,
+                displayProgress: true,
+                displayWarp: true,
+                displayLoop: true,
+                displayRestart: true
+            });
+
+            if (current.audioVisualObj && current.audioVisualObj.setUpAudio) {
+                current.audioVisualObj.setUpAudio();
+            }
+
+            const synth = new ABCJS.synth.CreateSynth();
+
+            synth.init({ AudioContext: audioContext, visualObj: current.audioVisualObj })
+                .then(() => synth.prime())
+                .then(() => {
+                    synthControl.setTune(current.audioVisualObj, false, {});
+                    current.synthControl = synthControl;
+                    loopBtnEl = audioEl.querySelector('.abcjs-midi-loop');
+                })
+                .catch(err => {
+                    audioEl.textContent = 'Audio setup failed.';
+                    console.error(err);
+                });
+        }
+
+        document.addEventListener("keydown", function (e) {
+            if (e.code === "Space") {
+                e.preventDefault();
+                if (current.synthControl) {
+                    if (current.synthControl.playing) {
+                        current.synthControl.pause();
+                    } else {
+                        current.synthControl.play();
+                    }
+                }
+            }
+            if (e.key.toLowerCase() === "l") {
+                e.preventDefault();
+                if (loopBtnEl) {
+                    loopBtnEl.click();
+                }
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const displayTunes = splitTunebook(TUNEBOOK_DISPLAY_ONLY);
+            const audioTunes = splitTunebook(TUNEBOOK_AUDIO_ONLY);
+
+            tunes = displayTunes.map((display, i) => ({
+                display,
+                audio: audioTunes[i] || display
+            }));
+
+            fillSelect();
+            renderTune(0);
+
+            document.getElementById('tuneSelect').addEventListener('change', e => renderTune(parseInt(e.target.value)));
+            document.getElementById('prevTune').addEventListener('click', () => renderTune(current.index - 1));
+            document.getElementById('nextTune').addEventListener('click', () => renderTune(current.index + 1));
+            
+            /* 
+            const tempoInput = document.querySelector('.abcjs-midi-tempo'); 
+            */
+            
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "ArrowLeft") {
+                    e.preventDefault();
+                    document.getElementById("prevTune").click();
+                }
+                if (e.key === "ArrowRight") {
+                    e.preventDefault();
+                    document.getElementById("nextTune").click();
+                }
+                /*
+                if (event.key === 'ArrowUp') {
+                    e.preventDefault();
+                    let currentValue = parseInt(tempoInput.value, 10);
+                    tempoInput.value = Math.min(300, currentValue + 5);
+                    tempoInput.dispatchEvent(new Event('change'));
+                }
+                if (event.key === 'ArrowDown') {
+                    e.preventDefault();
+                    let currentValue = parseInt(tempoInput.value, 10);
+                    tempoInput.value = Math.max(1, currentValue - 5);
+                    tempoInput.dispatchEvent(new Event('change'));
+                };
+                */
+            });
+        });
+    </script>
+</body>
+
+</html>
