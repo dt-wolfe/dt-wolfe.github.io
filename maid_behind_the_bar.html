@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,7 +48,7 @@
             background: var(--panel);
             border: 1px solid var(--border);
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             overflow: hidden;
         }
 
@@ -59,17 +59,40 @@
             padding: 14px;
             border-bottom: 1px solid var(--border);
             align-items: center;
+            justify-content: center;
         }
 
-        .meta {
-            padding: 14px;
+        .controls>div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
 
-        label {
-            color: var(--muted);
-            font-weight: 600;
-            font-size: 12px;
-            text-transform: uppercase;
+        .controls button,
+        .controls select {
+            margin-top: 8px;
+        }
+
+        .button-group {
+            /* display: flex; */
+            gap: 6px;
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+
+        button {
+            padding: 10px 14px;
+            font-size: 16px;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+
+        button:active {
+            transform: scale(0.98);
         }
 
         select {
@@ -79,38 +102,77 @@
             border-radius: 12px;
             padding: 10px 12px;
             outline: none;
-            transition: border-color .2s;
+            transition: border-color 0.2s;
+            font-size: 16px;
+            min-width: 120px;
+        }
+
+        label {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .meta {
+            padding: 14px;
         }
 
         #paper_audio {
             display: none;
+        }
+
+        /* 📱 Mobile Optimization */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .controls>div {
+                width: 100%;
+                align-items: stretch;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="wrap">
-        <header>
+        <!-- <header>
             <h1>Break It Down</h1>
-        </header>
+        </header> -->
 
         <div class="card">
             <div class="controls">
-                <div>
-                    <label for="tuneSelect">Tune</label><br />
-                    <div style="display:flex; gap:6px; align-items:center;">
-                        <button id="prevTune">◀</button>
-                        <select id="tuneSelect" aria-label="Select tune"></select>
-                        <button id="nextTune">▶</button>
-                    </div>
+                <div class="button-group">
+                    <button id="prevTune">◀</button>
+                    <select id="tuneSelect" aria-label="Select tune"></select>
+                    <button id="nextTune">▶</button>
                 </div>
             </div>
 
+            <div class="meta">
+                <span id="nowPlaying">Ready.</span>
+                <a id="midiLink" href="#" style="display:none"></a>
+            </div>
+            <div id="audio"></div>
             <div id="paper"></div>
             <div id="paper_audio"></div>
-            <div id="audio"></div>
-            <div class="meta"><span id="nowPlaying">Ready.</span><a id="midiLink" href="#" style="display:none"></a>
-            </div>
+
         </div>
     </div>
 
@@ -1477,11 +1539,11 @@ fgag fdde | fdad fdd(f | ef)ga bee(f | (3gfe) be gee(a | fg)a(f b2) af | $ def(d
             document.getElementById('tuneSelect').addEventListener('change', e => renderTune(parseInt(e.target.value)));
             document.getElementById('prevTune').addEventListener('click', () => renderTune(current.index - 1));
             document.getElementById('nextTune').addEventListener('click', () => renderTune(current.index + 1));
-            
+
             /* 
             const tempoInput = document.querySelector('.abcjs-midi-tempo'); 
             */
-            
+
             document.addEventListener("keydown", (e) => {
                 if (e.key === "ArrowLeft") {
                     e.preventDefault();
