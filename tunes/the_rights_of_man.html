@@ -1,69 +1,315 @@
 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <title>Practice</title>
-        <link rel="stylesheet" href="../css/abcjs-audio.css">
-        <script src="../js/abcjs-basic-min.js" defer></script>
-        <style>
-            main {
-                max-width: 90%;
-                margin: 0 auto;
-            }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Practice</title>
+    <link rel="stylesheet" href="../css/abcjs-audio.css">
+    <script src="../js/abcjs-basic-min.js" defer></script>
+    <style>
+        main {
+            max-width: 90%;
+            margin: 0 auto;
+        }
 
-            .tune_selector,
-            .audio_controls {
-                display: flex;
-                justify-content: center;
-                padding: 10px;
-            }
+        .tune_selector,
+        .audio_controls {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
 
-            button {
-                padding: 10px;
-                margin: 10px;
-                font-size: 16px;
-                border-radius: 8px;
-            }
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
 
-            select {
-                border: 1px solid;
-                border-radius: 12px;
-                padding: 10px 12px;
-                outline: none;
-                transition: border-color 0.2s;
-                font-size: 16px;
-                min-width: 120px;
-            }
+        select {
+            border: 1px solid;
+            border-radius: 12px;
+            padding: 10px 12px;
+            outline: none;
+            transition: border-color 0.2s;
+            font-size: 16px;
+            min-width: 120px;
+        }
 
-            .loop-active {
-                background-color: red;
-                color: white;
-                font-weight: bold;
-            }
+        .loop-active {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
 
-            .warp-active {
-                background-color: green;
-                color: white;
-                font-weight: bold;
-            }
+        .warp-active {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
 
-            #audio_paper {
-                display: none;
-            }
-        </style>
-        <script type="text/javascript">
-            const render_abc = [`X:23
+        .hide-active{
+            display: none !important;;
+        }
+
+        #audio_paper {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        const render_abc = [`X:13
+T:Ballydesmond Polka - No. 1
+L:1/8
+M:2/4
+Q:1/4=138
+K:G
+(G/ |: EA)(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) | (EA)(AB) |(cd) e(e/f/ | ge)(dB) |1 
+A2 A3/2 (G/ :|2 A2 A2 |: a2 a>(b | a)gef | g2 g>(a | g)ede | a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 :| 
+X:14
+T:Ballydesmond Polka - No. 2
+L:1/8
+M:2/4
+Q:1/4=138
+K:G
+(AB) | c2 B2 | A2 G>(A | B)d ed | g2 g>(f | ea) (3(g/a/g/e) | (dB) G(A/B/ | c)(e d)(B | A2) :| 
+A2 | (ea) (ag/e/) | (dg) (gd) | (ea) (ab) | g2 g>(f | ea) (3(g/a/g/e) | (dB) G(A/B/ | c)(e d)(B | 
+A2) :| 
+X:12
+T:Bill Sullivan's Polka
+R:polka
+L:1/8
+M:2/4
+Q:1/4=138
+K:A
+|: a2 a>(f | ec) a>(f | ec) a>(f | ec) (BA) | a2 a>(f | 
+ec) a>(e | ce) B>(c |1 BA) A2 :|2 BA A(B/ |: 
+ce) (ec) | (df) (fe) | (ce) e(A/B/ | cB) B2 | (ce) (ec) | (df) (fe) | 
+(ce) B>(c |1 BA) A(B/ :|2 BA) A2 |] 
+X:21
+T:Bonaparte Crossing The Rhine
+L:1/8
+M:2/2
+Q:1/2=92
+K:G
+E(G | A2) A(B A)(GEG) | cde(c d2) eg | age(d cd)ed | cAG(E G2) cB | A2 AB A(GEG) | 
+cde(c d2) (3ef(g | a)ge(d cA)G(E | A2) A{d}(B A2) :| eg | ag (3ef(g e)(d | ^cd)e(f g2) eg | 
+age(d cd)ed | cAG(E G2) c(B | A2) AB A(GEG) | cde(c d2) (3ef(g | a)ge(d cA)G(E | 
+A2) A{d}(B A2) :|
+X:26
+T:Cooley's Reel
+R:reel
+M:C|
+L:1/8
+Q:1/2=120
+K:Edor
+ (F|:E)(B{/d}B)(A B2) E(B|{/d}B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
+E)(B{/c}B)(A B2) E(B|{/d}B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
+|: eB- !turn!B2 eBgf|eB- !turn!B2 ged(B|A2) FA DAF(B|A2) FA defg|
+eB- !turn!B2 eBgf|eB- !turn!B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]
+
+X:16
+T:Din Tarrant's Polka
+L:1/8
+M:2/4
+Q:1/4=138
+K:D
+a>(f d)(f | e)(d e2) | (e/f/e/d/) (3(c/d/c/A) | (Bc) (df) | a>(f d)(f | e)(d e2) | 
+(e/f/e/d/) (3(c/d/c/A) |1 (Bc) d2 :|2 (Bc) d(B/c/ |:d)(B f)(B | d)(B f)(e/d/ | 
+c)A eA | (cA) (ce) | (fb) (ba) | (fb) (ba) | (fa) (fe) |1 (c/B/A) B>(c :|2 (c/B/A) B2 |] 
+X:5
+T:Gillan's Apples
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+def | g3(B2 A) | GBA GBd | (e{/a}ge) edB | 
+dBA (A{/d}BA) | GBd gdB | GBd g2 (a| b)ag fge | edc :: d2 (e| f)aa faa | faa agf | gbb gbb | 
+gbb bag | faa faa | faa a2 (a|b)ag fge | edc :|
+X:7
+T:Jackie Tar
+R:hornpipe
+L:1/8
+M:2/2
+Q:1/2=92
+K:G
+(Bd) |: [Be]3 d e(fge) | d(B{/d}BA) B^cd(B | AB)de faef | d2 A2 A2 (Bd) | ede(f g2) fe | 
+dBG(B d2) cB | AGF(E DE)FA |1 G2 E2 E2 (Bd) :|2 G2 E2 E3 G ||: B(GEG) B(GEG) | BAG(F E2) FG | A(FDF) A(FDF) | 
+AGF(E D2) EF | GFG(E{/c} g2) fe | dBG(B d2) cB | AGF(E DE)FA |1 G2 E2 E3 G :|2 G2 E2 [EB,]3 |]
+X:78
+T:Jenny's Chickens
+L:1/8
+M:2/2
+Q:1/2=120
+K:A
+(e |: f3) (f{/b} fe)ce | fef(a e)(Ac)(e | !turn!f3) (f{/a} f)ece | f(a{/b}af) eAce :| 
+f(B{/d}BA) !turn!B3 e | fB- !turn!B2 eAce | f(B{d}BA) !turn!B3 e | f(a{b}af) eAce | 
+fB- !turn!B2 FB- !turn!B2 | fB- !turn!B2 eAce | f(B{d}BA) !turn!B3 e | f(a{b}af) edc(A || 
+B2) bB aBgB- | !turn!B2 fe cBA(c | B2) bB aBg(B | fg)af edc(A | B2) bB aBgB- | !turn!B2 fe cBA(c | 
+B2) bB aBgB | f(a{b}af) eAce |] [fB]8 |]
+
+
+
+
+
+
+
+
+
+
+
+
+X:15
+T:Julia Clifford's Polka
+L:1/8
+M:2/4
+Q:1/4=138
+K:D
+(3(EFG) (AB) | (3(=c/d/c/A) (AG) | (Ad) (3(d/e/d/c) | d2 d>(e | f)ded | (3(=c/d/c/A) (Ad) | 
+(3(cBA) (GE) | D2 D>(E | F)GAB | (3(=c/d/c/A) (AG) | (Ad) (3(d/e/d/c) | d2 d>(e | f)ded | 
+(3(=c/d/c/A) (Ad) | (3(cBA) (GE) | D2 D3/2 (e/||
+|: f)ded | (cA) A>(e | f)(g/f/ ec) | d2 d>(e | 
+f)ded | (3(=c/d/c/A) Ad | (3(cBA) (GE) |1 D2 D> (e :|2 D2 D2 |]
+X:18
+T:Morrison's Jig
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+!turn!E3 !turn!B3 | !turn!E3 AFD | EBE B2 (c | d)cB AFD | !turn!E3 !turn!B3 | !turn!E3 AFD | 
+GBG FGA | dAG (FED) :| Bee{/a} fee | aee{/a} fed | Bee{/a} fee | (a2 g) fed | Bee{/a} fee | 
+aee{/a} fee | gfe d2 (A |{/d} B)AG (FED) | Bee{/a} fee | aee{/a} fed | Bee{/a} fee | faf def | 
+!turn!g3 gfe | def g2 (d | e)dc d2 (A | B)A(G F)ED || E6 |] 
+X:4
+T:My Darling Asleep
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+(g |: f)dd cAA | BGG A2 (G | F)AA def |{/a} gfg eag | fdd cAA | BGG A2 (G | F)AA def |1 
+{/a} gec d2 (g :|2 {/a} gec d3 || FAA dAA | FAA{/d} BAG | FAA def |{/a} gfg eag | fdd cAA | BGG A2 (G | F)AA def | 
+{/a} gec d3 :|
+X:11
+T:O The Britches Full Of Stitches
+L:1/8
+M:2/4
+Q:1/4=138
+K:A
+A>(B cA) | (BA) (cA) | A>(B cA) | (BA) F2 | A>(B cA) | (BA) (ce) | 
+A>(B AF) | (FE) E2 :: e>(f ec) | (BA) (Bc) | e>(f ec) | (BA) F2 | e>(f ec) | (BA) (Bc) | 
+A>(B AF) | (FE) E2 :| 
+X:20
+T:Off To California
+L:1/8
+M:2/2
+Q:1/2=92
+K:G
+(3(DEF) | G2 G(B A)(GED) | GBd(g e2) (3de(f | g)(fg)(d e)(dBG) | ABA(G E2) (3DE(F | 
+G)(FG)(B A)(GED) | GBd(g e2) (3de(f | g)(fg)(d e)(dBG) | A2 G2 G2 :| (ef) | gfe(g fe)df | 
+e2 e(f e)(d B2) | (g(f)g)(d e)(dBG) | AB(A(G) E2) (3DE(F | G)(FG)(B A)(GED) | 
+GBd(g e2) (3de(f | g)(fg)(d e)(dBG) | A2 G2 G2 :|
+X:19
+T:Old Joe's Jig
+R:jig
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+(e | f)AA AFA | BAF A2 (A | !turn!B3) AFA | Bcd efg | fAA AFA | BAF A2 (A | !turn!B3) AFA | Bdc d2 :: (e | 
+!turn!f3) efe | dBA d2 (e | f)aa afe | faa b2 (a | !turn!f3) efe | dBA d2(e | f)AA AFA | Bdc d2 :| 
+X:9
+T:The Banshee
+L:1/8
+M:2/2
+Q:1/2=120
+K:G
+(DE) | G3 (D ED)EG | AGA(B d2) Bd | ege(d BA)GA | B(AG)(E{/G} ED)DE | 
+GFG(D ED)EG | AGA(B d2) Bd | ege(d BA)GA | BAG(E{/G} ED) :|: DD | e(a{/b}ag) efge | 
+d(B{/d}BA) !turn!B3 d | e(B{/d} B2) egfg | e(B{/d}BA) !turn!B3 d | e(a{/b}ag) efge | 
+d(B{/d}BA) !turn!B3 d | ege(d BA)GA | BAG(E{/G} ED) :| DE|G6|] 
+
+X:1
+T:Enchanted Valley, The
+C:Very Slow
+R:Air-Song
+L:1/8
+Q:1/4=40
+M:2/4
+K:Bb
+V:1 treble 
+V:1
+ (G>A) (B/c/d/=e/) | f2 (gd/B/) |({/d} c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) | f2 (df) | %6
+ (ga b).g |{/b} (ag f).d | (d{ed}c) BB | (AG{AG} F).D | (G/A/B/c/) (d{ed}c/>A/) | GG G z/ || G/ | %13
+ Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) | (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | %19
+ (G/A/B/c/) dd | (b/g/f/d/) c/A/F | GA (B{cB}A/G/) | (A>G) (FD) | (G/A/B/c/) (d{ed}c/>A/) | %24
+ GG G z || %25
+
+
+
+X:22
+T:The Galway Hornpipe
+L:1/8
+M:2/2
+Q:1/2=92
+K:D
+F(E | D2) F(A dA)FD | (CD)E(F G2) F(E | D2) F(A d(c)df) | e(dcB) (3ABA (3GF(E | D2) F(A dA)FD | 
+CDE(F G2) FG | A(dcB) AGF(E | (3DED) C(E D2) F(E | D2) F(A dA)FD | (CD)E(F G2) F(E | D2) F(A d(c)df) | e(dcB) AGF(E | D2) F(A dA)FD | 
+CDE(F G2) FG | A(dcB) AGF(E | (3DED) C(E D2) d(e | !turn!f3) (g f)ed(c | BA)B(c B2) cd | 
+e3 (f e)(dc)(B | (3(AB)A) ^G(B A2) (3AB(c | d)(cd)(e f)dA(F | GF)GA B(dcB) | A(dcB) AGF(E | 
+(3DED) C(E D2) d(e | !turn!f3) (g f)ed(c | BA)B(c B2) cd | 
+e3 (f e)(dc)(B | (3(AB)A) c(e a2) (3AB(c | d)(cd)(e f)dA(F | GF)GA B(dcB) | A(dcB) AGF(E | 
+(3DED) C(E D2)|]
+X:6
+T:The Harvest Home
+R:hornpipe
+L:1/4
+M:2/2
+Q:1/2=92
+K:D
+(A/F/) |: D/A/F/A/ D/A/F/A/ | d/(e/{/a}f/e/) d/(c/B/A/) | e/A/f/A/ g/A/f/A/ | (3(e/f/e/) (3(d/c/B/) (3(A/B/A/) (3(G/F/E/) | 
+D/A/F/A/ D/A/F/A/ | d/(e/{/a}f/e/) d/(c/B/A/) | e/A/f/A/ g/e/c/e/ |1  d f d (A/F/):|2 d f d (c/d/) ||
+|: (e/A/) (3A/A/A/ (f/A/) (3A/A/A/ | g/A/f/A/ (e/A/) (3A/A/A/ |e/A/f/A/ g/A/f/A/ | (3(e/f/e/) (3(d/c/B/) (3(A/B/A/) (3(G/F/E/) | 
+D/A/F/A/ D/A/F/A/ |d/(e/{/a}f/e/) d/(c/B/A/) |  e/A/f/A/ g/e/c/e/ |1 d f d (c/d/):|2 d f d2 |]
+X:1
+T:The Irish Washerwoman
+R:jig
+L:1/8
+M:6/8
+Q:3/8=126
+K:G
+dc |: BGG DGG | BGB dcB | cAA EAA | cBc edc |
+BGG DGG | BGB dcB | cBc Adc |1 BGG Gdc :|2 BGG GBd ||
+|: gfg dBd | gfg bag | fdd Add | fdf agf |
+egg dgg | cgg Bgg | cBc Adc |1 BGG GBd :|2 BGG G |] 
+X:10
+T:The Maid Behind the Bar
+L:1/4
+M:2/2
+Q:1/2=120
+K:D
+(D/E/) |: F/A/A/{/d}(B/ A/F/)E/D/ | F/A/A/{/d}(B/ A) d/e/ | f/(B/{/d}B/A/) B/c/d/(e/ |  f) g/f/ e/(d/B/A/) |
+F/A/A/{/d}(B/ A/F/)E/D/ | F/A/A/{/d}(B/ A) d/e/ | f/(B/{/d}B/A/) B/c/d/(B/ |1  A/F/)E/F/ D (D/E/) :|2 A/F/)E/F/ D3/2 (e/ ||
+|: f/g/)a/g/ f/d/d/e/ | f/d/a/d/ f/d/d/(f/ |  e/f/)g/a/ b/e/e/(f/ | (3g/f/e/) b/e/ g/e/e/(a/ |
+f/g/)a/(f/ b) a/f/ | d/e/f/(d/ e) d/e/ |  f/(B/{/d}B/A/) B/c/d/(B/ |1 A/F/)E/F/ D3/2 (e/ :|2 A/F/)E/F/ D3/2 |]
+X:8
+T:The Merry Blacksmith
+L:1/4
+M:2/2
+Q:1/2=120
+K:D
+(A/B/) |: d3/2 (A/ {/d}B/A/)F/A/ | A/B/d/(A/ {/d} B/A/)F/A/ | A/B/d/(e/ f) e/d/ |  B/e/e/d/ e/(g/f/e/) |
+d/c/d/(A/ {/d}B/A/)F/A/ | A/B/d/(A/ {/d}B/A/)F/A/ | A/B/d/e/ f/d/!^!e/(c/ |1  d/B/)(A/F/) D A/B/ :|2 d/B/)(A/F/) D (f/g/)||
+|: a (a/g/) f (f/e/) | d3/2 (A/ {/d}B/A/)F/A/ |  A/B/d/(e/ f) e/d/ | B/e/e/d/ e/(g/f/e/) |
+a/b/a/(g/ f/g/)f/e/ | d/c/d/(A/{/d} B/A/)F/A/ |  A/B/d/e/ f/d/e/(c/ |1 d/B/) A/F/ D (f/g/):|2d/B/) A/F/ D2|]
+X:23
 T:The Rights Of Man
 R:hornpipe
 L:1/8
 M:2/2
 Q:1/2=92
-I:linebreak 
 K:G
 G(A |{/d} Bc)AB GAF(G | EF)G(A{/d} B2) ef | gfe(d Bd)ef | ged(B A2) G(A | 
 {/d}(3BcB (3ABA) GAF(G | EF)G(A{/d} B2) ef | gfe(d B)(gf)(g | e2) E2 E2 G(A |
@@ -72,296 +318,7 @@ G(A |{/d} Bc)AB GAF(G | EF)G(A{/d} B2) ef | gfe(d Bd)ef | ged(B A2) G(A |
 ba)bg efg(a | bg)ed e(gfe) | d2 {/e}(d^c) def(g | af)d(f a2) gf | eBe(g fd)fa | 
 (3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a| 
 ba)bg efg(a | ba)gf e(gfe) | d2 {/e}(d^c) def(g | af)d(f a2) gf | eBe(g fd)fa | 
-(3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2|] 
-`,
-`X:1
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-G(A | {/d} Bc)AB GAF(G |`,
-`X:2
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(A{/d} B2) ef |`,
-`X:3
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d Bd)ef |`,
-`X:4
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-ged(B A2) G(A |`,
-`X:5
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-{/d} (3BcB (3ABA) GAF(G |`,
-`X:6
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(A{/d} B2) ef |`,
-`X:7
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:8
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 G(A |`,
-`X:9
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-{/d} Bc)AB GAF(G |`,
-`X:10
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(A{/d} B2) ef |`,
-`X:11
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-g(fe)(d ed)Bd |`,
-`X:12
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-cBA(G A2) GA |`,
-`X:13
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-{/d} (3BcB (3ABA GAF(G |`,
-`X:14
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(A{/d} B2) ef |`,
-`X:15
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:16
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 g(a |`,
-`X:17
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
- ba)bg efg(a |`,
-`X:18
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-bg)ed e(gfe) |`,
-`X:19
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-d2{/e} (d^c) def(g |`,
-`X:20
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-af)d(f a2) gf |`,
-`X:21
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
- eBe(g fd)fa |`,
-`X:22
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-(3gf(e g)(a b2) ef |`,
-`X:23
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:24
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 g(a |`,
-`X:25
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-ba)bg efg(a |`,
-`X:26
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-ba)gf e(gfe) |`,
-`X:27
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-d2{/e} (d^c) def(g |`,
-`X:28
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-af)d(f a2) gf |`,
-`X:29
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
- eBe(g fd)fa |`,
-`X:30
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-(3gf(e g)(a b2) ef |`,
-`X:31
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:32
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 |]`,
+(3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2|]`,
 `X:1
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -614,311 +571,264 @@ K:G
 V:1 treble 
 V:1
 ba)bg efg(a | ba)gf e(gfe) | d2{/e} (d^c) def(g | af)d(f a2) gf |  eBe(g fd)fa | (3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2 |]`];
-            const audio_abc = [`X:23
+        const audio_abc = [`X:13
+T:Ballydesmond Polka - No. 1
+L:1/8
+M:2/4
+Q:1/4=138
+K:G
+(G/ |: EA)(AB) | (cd)(eg) | G2 G>(A | G)(EED) | (EA)(AB) |(cd) e(e/f/ | ge)(dB) |1 
+A2 A3/2 (G/ :|2 A2 A2 |: a2 a>(b | a)gef | g2 g>(a | g)ede | a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 :| 
+X:14
+T:Ballydesmond Polka - No. 2
+L:1/8
+M:2/4
+Q:1/4=138
+K:G
+(AB) | c2 B2 | A2 G>(A | B)d ed | g2 g>(f | ea) (3(g/a/g/e) | (dB) G(A/B/ | c)(e d)(B | A2) :| 
+A2 | (ea) (ag/e/) | (dg) (gd) | (ea) (ab) | g2 g>(f | ea) (3(g/a/g/e) | (dB) G(A/B/ | c)(e d)(B | 
+A2) :| 
+X:12
+T:Bill Sullivan's Polka
+R:polka
+L:1/8
+M:2/4
+Q:1/4=138
+K:A
+|: a2 a>(f | ec) a>(f | ec) a>(f | ec) (BA) | a2 a>(f | 
+ec) a>(e | ce) B>(c |1 BA) A2 :|2 BA A(B/ |: 
+ce) (ec) | (df) (fe) | (ce) e(A/B/ | cB) B2 | (ce) (ec) | (df) (fe) | 
+(ce) B>(c |1 BA) A(B/ :|2 BA) A2 |] 
+X:21
+T:Bonaparte Crossing The Rhine
+L:1/8
+M:2/2
+Q:1/2=92
+K:G
+E(G | A2) A(B A)(GEG) | cde(c d2) eg | age(d cd)ed | cAG(E G2) cB | A2 AB A(GEG) | 
+cde(c d2) (3ef(g | a)ge(d cA)G(E | A2) A(B A2) :| eg | ag (3ef(g e)(d | ^cd)e(f g2) eg | 
+age(d cd)ed | cAG(E G2) c(B | A2) AB A(GEG) | cde(c d2) (3ef(g | a)ge(d cA)G(E | 
+A2) A(B A2) :|
+X:26
+T:Cooley's Reel
+R:reel
+M:C|
+L:1/8
+Q:1/2=120
+K:Edor
+ (F|:E)(BB)(A B2) E(B|B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
+E)(BB)(A B2) E(B|B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
+|: eB- B2 eBgf|eB- B2 ged(B|A2) FA DAF(B|A2) FA defg|
+eB- B2 eBgf|eB- B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]
+
+X:16
+T:Din Tarrant's Polka
+L:1/8
+M:2/4
+Q:1/4=138
+K:D
+a>(f d)(f | e)(d e2) | (e/f/e/d/) (3(c/d/c/A) | (Bc) (df) | a>(f d)(f | e)(d e2) | 
+(e/f/e/d/) (3(c/d/c/A) |1 (Bc) d2 :|2 (Bc) d(B/c/ |:d)(B f)(B | d)(B f)(e/d/ | 
+c)A eA | (cA) (ce) | (fb) (ba) | (fb) (ba) | (fa) (fe) |1 (c/B/A) B>(c :|2 (c/B/A) B2 |] 
+X:5
+T:Gillan's Apples
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+def | g3(B2 A) | GBA GBd | (ege) edB | 
+dBA (ABA) | GBd gdB | GBd g2 (a| b)ag fge | edc :: d2 (e| f)aa faa | faa agf | gbb gbb | 
+gbb bag | faa faa | faa a2 (a|b)ag fge | edc :|
+X:7
+T:Jackie Tar
+R:hornpipe
+L:1/8
+M:2/2
+Q:1/2=92
+K:G
+(Bd) |: [Be]3 d e(fge) | d(BBA) B^cd(B | AB)de faef | d2 A2 A2 (Bd) | ede(f g2) fe | 
+dBG(B d2) cB | AGF(E DE)FA |1 G2 E2 E2 (Bd) :|2 G2 E2 E3 G ||: B(GEG) B(GEG) | BAG(F E2) FG | A(FDF) A(FDF) | 
+AGF(E D2) EF | GFG(E g2) fe | dBG(B d2) cB | AGF(E DE)FA |1 G2 E2 E3 G :|2 G2 E2 [EB,]3 |]
+X:78
+T:Jenny's Chickens
+L:1/8
+M:2/2
+Q:1/2=120
+K:A
+(e |: f3) (f fe)ce | fef(a e)(Ac)(e | f3) (f f)ece | f(aaf) eAce :| 
+f(BBA) B3 e | fB- B2 eAce | f(BBA) B3 e | f(aaf) eAce | 
+fB- B2 FB- B2 | fB- B2 eAce | f(BBA) B3 e | f(aaf) edc(A || 
+B2) bB aBgB- | B2 fe cBA(c | B2) bB aBg(B | fg)af edc(A | B2) bB aBgB- | B2 fe cBA(c | 
+B2) bB aBgB | f(aaf) eAce |] [fB]8 |]
+
+
+
+
+
+
+
+
+
+
+
+
+X:15
+T:Julia Clifford's Polka
+L:1/8
+M:2/4
+Q:1/4=138
+K:D
+(3(EFG) (AB) | (3(=c/d/c/A) (AG) | (Ad) (3(d/e/d/c) | d2 d>(e | f)ded | (3(=c/d/c/A) (Ad) | 
+(3(cBA) (GE) | D2 D>(E | F)GAB | (3(=c/d/c/A) (AG) | (Ad) (3(d/e/d/c) | d2 d>(e | f)ded | 
+(3(=c/d/c/A) (Ad) | (3(cBA) (GE) | D2 D3/2 (e/||
+|: f)ded | (cA) A>(e | f)(g/f/ ec) | d2 d>(e | 
+f)ded | (3(=c/d/c/A) Ad | (3(cBA) (GE) |1 D2 D> (e :|2 D2 D2 |]
+X:18
+T:Morrison's Jig
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+E3 B3 | E3 AFD | EBE B2 (c | d)cB AFD | E3 B3 | E3 AFD | 
+GBG FGA | dAG (FED) :| Bee fee | aee fed | Bee fee | (a2 g) fed | Bee fee | 
+aee fee | gfe d2 (A | B)AG (FED) | Bee fee | aee fed | Bee fee | faf def | 
+g3 gfe | def g2 (d | e)dc d2 (A | B)A(G F)ED || E6 |] 
+X:4
+T:My Darling Asleep
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+(g |: f)dd cAA | BGG A2 (G | F)AA def | gfg eag | fdd cAA | BGG A2 (G | F)AA def |1 
+ gec d2 (g :|2  gec d3 || FAA dAA | FAA BAG | FAA def | gfg eag | fdd cAA | BGG A2 (G | F)AA def | 
+ gec d3 :|
+X:11
+T:O The Britches Full Of Stitches
+L:1/8
+M:2/4
+Q:1/4=138
+K:A
+A>(B cA) | (BA) (cA) | A>(B cA) | (BA) F2 | A>(B cA) | (BA) (ce) | 
+A>(B AF) | (FE) E2 :: e>(f ec) | (BA) (Bc) | e>(f ec) | (BA) F2 | e>(f ec) | (BA) (Bc) | 
+A>(B AF) | (FE) E2 :| 
+X:20
+T:Off To California
+L:1/8
+M:2/2
+Q:1/2=92
+K:G
+(3(DEF) | G2 G(B A)(GED) | GBd(g e2) (3de(f | g)(fg)(d e)(dBG) | ABA(G E2) (3DE(F | 
+G)(FG)(B A)(GED) | GBd(g e2) (3de(f | g)(fg)(d e)(dBG) | A2 G2 G2 :| (ef) | gfe(g fe)df | 
+e2 e(f e)(d B2) | (g(f)g)(d e)(dBG) | AB(A(G) E2) (3DE(F | G)(FG)(B A)(GED) | 
+GBd(g e2) (3de(f | g)(fg)(d e)(dBG) | A2 G2 G2 :|
+X:19
+T:Old Joe's Jig
+R:jig
+L:1/8
+M:6/8
+Q:3/8=126
+K:D
+(e | f)AA AFA | BAF A2 (A | B3) AFA | Bcd efg | fAA AFA | BAF A2 (A | B3) AFA | Bdc d2 :: (e | 
+f3) efe | dBA d2 (e | f)aa afe | faa b2 (a | f3) efe | dBA d2(e | f)AA AFA | Bdc d2 :| 
+X:9
+T:The Banshee
+L:1/8
+M:2/2
+Q:1/2=120
+K:G
+(DE) | G3 (D ED)EG | AGA(B d2) Bd | ege(d BA)GA | B(AG)(E ED)DE | 
+GFG(D ED)EG | AGA(B d2) Bd | ege(d BA)GA | BAG(E ED) :|: DD | e(aag) efge | 
+d(BBA) B3 d | e(B B2) egfg | e(BBA) B3 d | e(aag) efge | 
+d(BBA) B3 d | ege(d BA)GA | BAG(E ED) :| DE|G6|] 
+
+X:1
+T:Enchanted Valley, The
+C:Very Slow
+R:Air-Song
+L:1/8
+Q:1/4=40
+M:2/4
+K:Bb
+V:1 treble 
+V:1
+ (G>A) (B/c/d/=e/) | f2 (gd/B/) |( c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) | f2 (df) | %6
+ (ga b).g | (ag f).d | (dc) BB | (AG F).D | (G/A/B/c/) (dc/>A/) | GG G z/ || G/ | %13
+ Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) | (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | %19
+ (G/A/B/c/) dd | (b/g/f/d/) c/A/F | GA (BA/G/) | (A>G) (FD) | (G/A/B/c/) (dc/>A/) | %24
+ GG G z || %25
+
+
+
+X:22
+T:The Galway Hornpipe
+L:1/8
+M:2/2
+Q:1/2=92
+K:D
+F(E | D2) F(A dA)FD | (CD)E(F G2) F(E | D2) F(A d(c)df) | e(dcB) (3ABA (3GF(E | D2) F(A dA)FD | 
+CDE(F G2) FG | A(dcB) AGF(E | (3DED) C(E D2) F(E | D2) F(A dA)FD | (CD)E(F G2) F(E | D2) F(A d(c)df) | e(dcB) AGF(E | D2) F(A dA)FD | 
+CDE(F G2) FG | A(dcB) AGF(E | (3DED) C(E D2) d(e | f3) (g f)ed(c | BA)B(c B2) cd | 
+e3 (f e)(dc)(B | (3(AB)A) ^G(B A2) (3AB(c | d)(cd)(e f)dA(F | GF)GA B(dcB) | A(dcB) AGF(E | 
+(3DED) C(E D2) d(e | f3) (g f)ed(c | BA)B(c B2) cd | 
+e3 (f e)(dc)(B | (3(AB)A) c(e a2) (3AB(c | d)(cd)(e f)dA(F | GF)GA B(dcB) | A(dcB) AGF(E | 
+(3DED) C(E D2)|]
+X:6
+T:The Harvest Home
+R:hornpipe
+L:1/4
+M:2/2
+Q:1/2=92
+K:D
+(A/F/) |: D/A/F/A/ D/A/F/A/ | d/(e/f/e/) d/(c/B/A/) | e/A/f/A/ g/A/f/A/ | (3(e/f/e/) (3(d/c/B/) (3(A/B/A/) (3(G/F/E/) | 
+D/A/F/A/ D/A/F/A/ | d/(e/f/e/) d/(c/B/A/) | e/A/f/A/ g/e/c/e/ |1  d f d (A/F/):|2 d f d (c/d/) ||
+|: (e/A/) (3A/A/A/ (f/A/) (3A/A/A/ | g/A/f/A/ (e/A/) (3A/A/A/ |e/A/f/A/ g/A/f/A/ | (3(e/f/e/) (3(d/c/B/) (3(A/B/A/) (3(G/F/E/) | 
+D/A/F/A/ D/A/F/A/ |d/(e/f/e/) d/(c/B/A/) |  e/A/f/A/ g/e/c/e/ |1 d f d (c/d/):|2 d f d2 |]
+X:1
+T:The Irish Washerwoman
+R:jig
+L:1/8
+M:6/8
+Q:3/8=126
+K:G
+dc |: BGG DGG | BGB dcB | cAA EAA | cBc edc |
+BGG DGG | BGB dcB | cBc Adc |1 BGG Gdc :|2 BGG GBd ||
+|: gfg dBd | gfg bag | fdd Add | fdf agf |
+egg dgg | cgg Bgg | cBc Adc |1 BGG GBd :|2 BGG G |] 
+X:10
+T:The Maid Behind the Bar
+L:1/4
+M:2/2
+Q:1/2=120
+K:D
+(D/E/) |: F/A/A/(B/ A/F/)E/D/ | F/A/A/(B/ A) d/e/ | f/(B/B/A/) B/c/d/(e/ |  f) g/f/ e/(d/B/A/) |
+F/A/A/(B/ A/F/)E/D/ | F/A/A/(B/ A) d/e/ | f/(B/B/A/) B/c/d/(B/ |1  A/F/)E/F/ D (D/E/) :|2 A/F/)E/F/ D3/2 (e/ ||
+|: f/g/)a/g/ f/d/d/e/ | f/d/a/d/ f/d/d/(f/ |  e/f/)g/a/ b/e/e/(f/ | (3g/f/e/) b/e/ g/e/e/(a/ |
+f/g/)a/(f/ b) a/f/ | d/e/f/(d/ e) d/e/ |  f/(B/B/A/) B/c/d/(B/ |1 A/F/)E/F/ D3/2 (e/ :|2 A/F/)E/F/ D3/2 |]
+X:8
+T:The Merry Blacksmith
+L:1/4
+M:2/2
+Q:1/2=120
+K:D
+(A/B/) |: d3/2 (A/ B/A/)F/A/ | A/B/d/(A/  B/A/)F/A/ | A/B/d/(e/ f) e/d/ |  B/e/e/d/ e/(g/f/e/) |
+d/c/d/(A/ B/A/)F/A/ | A/B/d/(A/ B/A/)F/A/ | A/B/d/e/ f/d/e/(c/ |1  d/B/)(A/F/) D A/B/ :|2 d/B/)(A/F/) D (f/g/)||
+|: a (a/g/) f (f/e/) | d3/2 (A/ B/A/)F/A/ |  A/B/d/(e/ f) e/d/ | B/e/e/d/ e/(g/f/e/) |
+a/b/a/(g/ f/g/)f/e/ | d/c/d/(A/ B/A/)F/A/ |  A/B/d/e/ f/d/e/(c/ |1 d/B/) A/F/ D (f/g/):|2d/B/) A/F/ D2|]
+X:23
 T:The Rights Of Man
 R:hornpipe
 L:1/8
 M:2/2
 Q:1/2=92
-I:linebreak 
 K:G
-G(A |d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef | gfe(d Bd)ef | ged(B A2) G(A | 
-d1/16(3BcB (3ABA) GAF(G | EF)G(Ad1/16 B2) ef | gfe(d B)(gf)(g | e2) E2 E2 G(A |
-d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef | g(fe)(d ed)Bd | cBA(G A2) GA| 
-d1/16(3BcB (3ABA) GAF(G | EF)G(Ad1/16 B2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a | 
-ba)bg efg(a | bg)ed e(gfe) | d2 e1/16(d^c) def(g | af)d(f a2) gf | eBe(g fd)fa | 
+G(A | Bc)AB GAF(G | EF)G(A B2) ef | gfe(d Bd)ef | ged(B A2) G(A | 
+(3BcB (3ABA) GAF(G | EF)G(A B2) ef | gfe(d B)(gf)(g | e2) E2 E2 G(A |
+ Bc)AB GAF(G | EF)G(A B2) ef | g(fe)(d ed)Bd | cBA(G A2) GA| 
+(3BcB (3ABA) GAF(G | EF)G(A B2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a | 
+ba)bg efg(a | bg)ed e(gfe) | d2 (d^c) def(g | af)d(f a2) gf | eBe(g fd)fa | 
 (3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a| 
-ba)bg efg(a | ba)gf e(gfe) | d2 e1/16(d^c) def(g | af)d(f a2) gf | eBe(g fd)fa | 
-(3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2|] 
-`,
-`X:1
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-G(A | d1/16 Bc)AB GAF(G |`,
-`X:2
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(Ad1/16 B2) ef |`,
-`X:3
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d Bd)ef |`,
-`X:4
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-ged(B A2) G(A |`,
-`X:5
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-d1/16 (3BcB (3ABA) GAF(G |`,
-`X:6
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(Ad1/16 B2) ef |`,
-`X:7
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:8
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 G(A |`,
-`X:9
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-d1/16 Bc)AB GAF(G |`,
-`X:10
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(Ad1/16 B2) ef |`,
-`X:11
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-g(fe)(d ed)Bd |`,
-`X:12
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-cBA(G A2) GA |`,
-`X:13
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-d1/16 (3BcB (3ABA GAF(G |`,
-`X:14
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-EF)G(Ad1/16 B2) ef |`,
-`X:15
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:16
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 g(a |`,
-`X:17
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
- ba)bg efg(a |`,
-`X:18
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-bg)ed e(gfe) |`,
-`X:19
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-d2e1/16 (d^c) def(g |`,
-`X:20
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-af)d(f a2) gf |`,
-`X:21
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
- eBe(g fd)fa |`,
-`X:22
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-(3gf(e g)(a b2) ef |`,
-`X:23
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:24
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 g(a |`,
-`X:25
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-ba)bg efg(a |`,
-`X:26
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-ba)gf e(gfe) |`,
-`X:27
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-d2e1/16 (d^c) def(g |`,
-`X:28
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-af)d(f a2) gf |`,
-`X:29
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
- eBe(g fd)fa |`,
-`X:30
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-(3gf(e g)(a b2) ef |`,
-`X:31
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-gfe(d B)(gf)(g |`,
-`X:32
-T:1 Bars - The Rights Of Man
-L:1/8
-Q:1/2=92
-M:2/2
-K:G
-V:1 treble 
-V:1
-e2) E2 E2 |]`,
+ba)bg efg(a | ba)gf e(gfe) | d2 (d^c) def(g | af)d(f a2) gf | eBe(g fd)fa | 
+(3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2|]`,
 `X:1
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -927,7 +837,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-G(A | d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef |`,
+G(A |  Bc)AB GAF(G | EF)G(A B2) ef |`,
 `X:2
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -945,7 +855,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d1/16 (3BcB (3ABA) GAF(G | EF)G(Ad1/16 B2) ef |`,
+ (3BcB (3ABA) GAF(G | EF)G(A B2) ef |`,
 `X:4
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -963,7 +873,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef |`,
+ Bc)AB GAF(G | EF)G(A B2) ef |`,
 `X:6
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -981,7 +891,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d1/16 (3BcB (3ABA GAF(G | EF)G(Ad1/16 B2) ef |`,
+ (3BcB (3ABA GAF(G | EF)G(A B2) ef |`,
 `X:8
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -1008,7 +918,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d2e1/16 (d^c) def(g | af)d(f a2) gf |`,
+d2 (d^c) def(g | af)d(f a2) gf |`,
 `X:11
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -1044,7 +954,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d2e1/16 (d^c) def(g | af)d(f a2) gf |`,
+d2 (d^c) def(g | af)d(f a2) gf |`,
 `X:15
 T:2 Bars - The Rights Of Man
 L:1/8
@@ -1071,7 +981,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-G(A | d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef | gfe(d Bd)ef | ged(B A2) G(A |`,
+G(A |  Bc)AB GAF(G | EF)G(A B2) ef | gfe(d Bd)ef | ged(B A2) G(A |`,
 `X:2
 T:4 Bars - The Rights Of Man
 L:1/8
@@ -1080,7 +990,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d1/16 (3BcB (3ABA) GAF(G | EF)G(Ad1/16 B2) ef | gfe(d B)(gf)(g | e2) E2 E2 G(A |`,
+ (3BcB (3ABA) GAF(G | EF)G(A B2) ef | gfe(d B)(gf)(g | e2) E2 E2 G(A |`,
 `X:3
 T:4 Bars - The Rights Of Man
 L:1/8
@@ -1089,7 +999,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef | g(fe)(d ed)Bd | cBA(G A2) GA |`,
+ Bc)AB GAF(G | EF)G(A B2) ef | g(fe)(d ed)Bd | cBA(G A2) GA |`,
 `X:4
 T:4 Bars - The Rights Of Man
 L:1/8
@@ -1098,7 +1008,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d1/16 (3BcB (3ABA GAF(G | EF)G(Ad1/16 B2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a |`,
+ (3BcB (3ABA GAF(G | EF)G(A B2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a |`,
 `X:5
 T:4 Bars - The Rights Of Man
 L:1/8
@@ -1107,7 +1017,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
- ba)bg efg(a | bg)ed e(gfe) | d2e1/16 (d^c) def(g | af)d(f a2) gf |`,
+ ba)bg efg(a | bg)ed e(gfe) | d2 (d^c) def(g | af)d(f a2) gf |`,
 `X:6
 T:4 Bars - The Rights Of Man
 L:1/8
@@ -1125,7 +1035,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-ba)bg efg(a | ba)gf e(gfe) | d2e1/16 (d^c) def(g | af)d(f a2) gf |`,
+ba)bg efg(a | ba)gf e(gfe) | d2 (d^c) def(g | af)d(f a2) gf |`,
 `X:8
 T:4 Bars - The Rights Of Man
 L:1/8
@@ -1143,7 +1053,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-G(A | d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef | gfe(d Bd)ef | ged(B A2) G(A | d1/16 (3BcB (3ABA) GAF(G | EF)G(Ad1/16 B2) ef | gfe(d B)(gf)(g | e2) E2 E2 G(A |`,
+G(A |  Bc)AB GAF(G | EF)G(A B2) ef | gfe(d Bd)ef | ged(B A2) G(A |  (3BcB (3ABA) GAF(G | EF)G(A B2) ef | gfe(d B)(gf)(g | e2) E2 E2 G(A |`,
 `X:2
 T:8 Bars - The Rights Of Man
 L:1/8
@@ -1152,7 +1062,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-d1/16 Bc)AB GAF(G | EF)G(Ad1/16 B2) ef | g(fe)(d ed)Bd | cBA(G A2) GA | d1/16 (3BcB (3ABA GAF(G | EF)G(Ad1/16 B2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a |`,
+ Bc)AB GAF(G | EF)G(A B2) ef | g(fe)(d ed)Bd | cBA(G A2) GA |  (3BcB (3ABA GAF(G | EF)G(A B2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a |`,
 `X:3
 T:8 Bars - The Rights Of Man
 L:1/8
@@ -1161,7 +1071,7 @@ M:2/2
 K:G
 V:1 treble 
 V:1
- ba)bg efg(a | bg)ed e(gfe) | d2e1/16 (d^c) def(g | af)d(f a2) gf |  eBe(g fd)fa | (3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a |`,
+ ba)bg efg(a | bg)ed e(gfe) | d2 (d^c) def(g | af)d(f a2) gf |  eBe(g fd)fa | (3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2 g(a |`,
 `X:4
 T:8 Bars - The Rights Of Man
 L:1/8
@@ -1170,152 +1080,186 @@ M:2/2
 K:G
 V:1 treble 
 V:1
-ba)bg efg(a | ba)gf e(gfe) | d2e1/16 (d^c) def(g | af)d(f a2) gf |  eBe(g fd)fa | (3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2 |]`];
+ba)bg efg(a | ba)gf e(gfe) | d2 (d^c) def(g | af)d(f a2) gf |  eBe(g fd)fa | (3gf(e g)(a b2) ef | gfe(d B)(gf)(g | e2) E2 E2 |]`];
+        
+        let currentTune = 0;
+        let synthControl;
+        let isLooping = false;
+        let isTrainer = false;
+        let currentWarp;
 
-            var currentTune = 0;
-            var synthControl;
-            var abcOptions = {
-                add_classes: true,
-                responsive: "resize"
+        const abcOptions = {
+            add_classes: true,
+            responsive: "resize"
+        };
+
+        function load() {
+            const actions = {
+                ".previous": previous,
+                ".next": next,
+                ".loop": toggleLoop,
+                ".start": start,
+                ".restart": restart,
+                ".warp50": () => warp(50),
+                ".warp75": () => warp(75),
+                ".warp100": () => warp(100),
+                ".trainer": toggleTrainer,
+                ".hide": toggleHide
             };
-            var isLooping;
 
-            function load() {
-                document.querySelector(".previous").addEventListener("click", previous);
-                document.querySelector(".next").addEventListener("click", next);
-                document.querySelector(".loop").addEventListener("click", loop);
-                document.querySelector(".start").addEventListener("click", start);
-                document.querySelector(".restart").addEventListener("click", restart);
-                document.querySelector(".warp50").addEventListener("click", (e) => warp(50, e.currentTarget));
-                document.querySelector(".warp75").addEventListener("click", (e) => warp(75, e.currentTarget));
-                document.querySelector(".warp100").addEventListener("click", (e) => warp(100, e.currentTarget));
+            // Attach button listeners
+            Object.entries(actions).forEach(([selector, handler]) => {
+                const el = document.querySelector(selector);
+                if (el) el.addEventListener("click", handler);
+            });
 
-                // Populate the dropdown
-                const tuneSelect = document.getElementById("tuneSelect");
-                render_abc.forEach((tune, index) => {
-                    const option = document.createElement("option");
-                    option.value = index;
-                    let title = (tune.match(/\nT:\s*(.+)/) || [null, "Untitled"])[1].trim()
-                    option.textContent = `${index + 1} - ${title}`;
-                    tuneSelect.appendChild(option);
-                });
+            // Populate tune dropdown
+            const tuneSelect = document.getElementById("tuneSelect");
+            render_abc.forEach((tune, index) => {
+                const option = document.createElement("option");
+                option.value = index;
+                const title = (tune.match(/\nT:\s*(.+)/) || [null, "Untitled"])[1].trim();
+                option.textContent = `${index + 1} - ${title}`;
+                tuneSelect.appendChild(option);
+            });
 
-                // Listen for selection changes
-                tuneSelect.addEventListener("change", function () {
-                    currentTune = parseInt(this.value);
-                    setTune(true);
-                });
-
-                if (ABCJS.synth.supportsAudio()) {
-                    synthControl = new ABCJS.synth.SynthController();
-                    synthControl.load("#audio", false, { displayLoop: true, displayRestart: true, displayPlay: true, displayProgress: true, displayWarp: true });
-                } else {
-                    console.log("Audio is not supported in this browser")
-                }
-                setTune(false);
-            }
-
-            function loop() {
-                let el = document.querySelector(".loop")
-                if (synthControl) {
-                    isLooping = !isLooping;
-                    synthControl.toggleLoop();
-                    el.classList.toggle("loop-active");
-                }
-            }
-
-            function start() {
-                if (synthControl) {
-                    synthControl.play();
-                }
-            }
-
-            function restart() {
-                if (synthControl) {
-                    synthControl.restart();
-                }
-            }
-
-            function warp(amount, el) {
-                if (synthControl) {
-                    console.log("warp", amount);
-                    synthControl.setWarp(amount);
-
-                    document.querySelectorAll(".warp50, .warp75, .warp100").forEach(btn => {
-                        btn.classList.remove("warp-active");
-                    });
-
-                    el.classList.add("warp-active");
-                }
-            }
-
-            function setTune(userAction) {
-                synthControl.disable(true);
-                document.getElementById("tuneSelect").value = currentTune;
-
-                // Render visual ABC
-                var visualObj = ABCJS.renderAbc("render_paper", render_abc[currentTune], abcOptions)[0];
-
-                // Prepare audio ABC
-                var audioObj = ABCJS.renderAbc("audio_paper", audio_abc[currentTune], {})[0];
-
-                if (synthControl) {
-                    synthControl.setTune(audioObj, userAction).then(function (response) {
-                        console.log("Audio successfully loaded.");
-
-                        if (isLooping) {
-                            synthControl.toggleLoop();
-                            document.querySelector(".loop").classList.add("loop-active");
-                        }
-                    }).catch(function (error) {
-                        console.warn("Audio problem:", error);
-                    });
-                }
-            }
-
-
-            function previous() {
-                currentTune--;
-                if (currentTune < 0)
-                    currentTune = render_abc.length - 1;
+            // Handle selection change
+            tuneSelect.addEventListener("change", () => {
+                currentTune = parseInt(tuneSelect.value, 10);
                 setTune(true);
+            });
+
+            // Setup synth controller
+            if (ABCJS.synth.supportsAudio()) {
+                synthControl = new ABCJS.synth.SynthController();
+                synthControl.load("#audio", false, {
+                    displayLoop: true,
+                    displayRestart: true,
+                    displayPlay: true,
+                    displayProgress: true,
+                    displayWarp: true
+                });
+            } else {
+                console.log("Audio is not supported in this browser");
             }
 
-            function next() {
-                currentTune++;
-                if (currentTune >= render_abc.length)
-                    currentTune = 0;
-                setTune(true);
-            }
-        </script>
-    </head>
+            setTune(false);
+        }
 
-    <body onload="load()">
-        <header>
-        </header>
-        <div class="container">
-            <main>
-                <div class="button_container">
-                    <div class="tune_selector">
-                        <button class="previous">Previous Tune</button>
-                        <select id="tuneSelect" aria-label="Select tune"></select>
-                        <button class="next">Next Tune</button>
-                    </div>
-                    <div class="audio_controls">
-                        <button class="start">Start/Pause</button>
-                        <button class="restart">Restart</button>
-                        <button class="loop">Loop</button>
-                        <button class="warp50">50%</button>
-                        <button class="warp75">75%</button>
-                        <button class="warp100">100%</button>
-                    </div>
+        function toggleLoop() {
+            if (!synthControl) return;
+            isLooping = !isLooping;
+            synthControl.toggleLoop();
+            document.querySelector(".loop")?.classList.toggle("loop-active");
+        }
+
+        function start() {
+            synthControl?.play();
+        }
+
+        function restart() {
+            synthControl?.restart();
+        }
+
+        function warp(amount) {
+            if (!synthControl) return;
+            synthControl.setWarp(amount);
+
+            document.querySelectorAll(".warp50, .warp75, .warp100")
+                .forEach(btn => btn.classList.remove("warp-active"));
+
+            document.querySelector(`.warp${amount}`)?.classList.add("warp-active");
+        }
+
+        function toggleHide() {
+            document.querySelector("#render_paper")?.classList.toggle("hide-active");
+        }
+
+        function toggleTrainer() {
+            isTrainer = !isTrainer;
+            synthControl?.setWarp(50);
+            document.querySelector(".trainer")?.classList.toggle("loop-active");
+            synthControl?.play();
+        }
+
+        function handlePlaybackEnded() {
+            if (!isTrainer) return;
+
+            currentWarp = parseInt(document.querySelector(".abcjs-midi-tempo")?.value, 10) || 0;
+
+            if (currentWarp >= 100) {
+                isTrainer = false;
+                document.querySelector(".trainer")?.classList.remove("loop-active");
+                return;
+            }
+
+            synthControl.restart();
+            synthControl.setWarp(currentWarp + 10);
+            synthControl.play();
+        }
+
+        function setTune(userAction) {
+            if (!synthControl) return;
+
+            synthControl.disable(true);
+            document.getElementById("tuneSelect").value = currentTune;
+
+            // Render ABC
+            ABCJS.renderAbc("render_paper", render_abc[currentTune], abcOptions);
+            const audioObj = ABCJS.renderAbc("audio_paper", audio_abc[currentTune], {})[0];
+
+            synthControl.setTune(audioObj, userAction, { onEnded: handlePlaybackEnded })
+                .then(() => {
+                    console.log("Audio successfully loaded.");
+                    if (isLooping) {
+                        synthControl.toggleLoop();
+                        document.querySelector(".loop")?.classList.add("loop-active");
+                    }
+                })
+                .catch(error => console.warn("Audio problem:", error));
+        }
+
+        function previous() {
+            currentTune = (currentTune - 1 + render_abc.length) % render_abc.length;
+            setTune(true);
+        }
+
+        function next() {
+            currentTune = (currentTune + 1) % render_abc.length;
+            setTune(true);
+        }
+
+    </script>
+</head>
+
+<body onload="load()">
+    <header>
+    </header>
+    <div class="container">
+        <main>
+            <div class="button_container">
+                <div class="tune_selector">
+                    <button class="previous">Previous Tune</button>
+                    <select id="tuneSelect" aria-label="Select tune"></select>
+                    <button class="next">Next Tune</button>
                 </div>
-                <div id="render_paper"></div>
-                <div id="audio_paper"></div>
-                <div id="audio"></div>
-            </main>
-        </div>
-    </body>
+                <div class="audio_controls">
+                    <button class="start">Start/Pause</button>
+                    <button class="restart">Restart</button>
+                    <button class="loop">Loop</button>
+                    <button class="warp50">50%</button>
+                    <button class="warp75">75%</button>
+                    <button class="warp100">100%</button>
+                    <button class="trainer">Speed Trainer</button>
+                    <button class="hide">Hide Notation</button>
+                </div>
+            </div>
+        </main>
+        <div id="render_paper"></div>
+        <div id="audio_paper"></div>
+        <div id="audio"></div>
+        </main>
+    </div>
+</body>
 
-    </html>
-    
+</html>
