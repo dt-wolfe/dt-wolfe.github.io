@@ -64,532 +64,404 @@
         }
     </style>
     <script>
-        const render_abc = [`X:26
-T:Cooley's Reel
-R:reel
-M:C|
+        const render_abc = [`X:31
+T:Donegal Mazurka 2
+R:mazurka
 L:1/8
-Q:1/2=120
-K:Edor
- (F|:E)(B{/d}B)(A B2) E(B|{/d}B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(B{/c}B)(A B2) E(B|{/d}B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- !turn!B2 eBgf|eB- !turn!B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- !turn!B2 eBgf|eB- !turn!B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+M:3/4
+Q:3/4=63
+K:D
+(DF) | A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) | A<F A2 (dc) | B<G B2 (ef) | 
+ge c2 (Ag) |1 f(e d2) :|2 fe de f(g || a<f) d2 (A=c) | (B<G) B2 (ef) | g<e c2 (BA) | 
+a^g a2 (fg) | a<f d2 (A=c) | B<G B2 (ef) | g<e c2 (Ag) |1 fe de f(g :|2 fe d2 |]`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+(DF) | A<F A2 (dc) | B<G B2 (ef) |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+ge c2 (Ac) | BA F2 (DF) |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+A<F A2 (dc) |  B<G B2 (ef) |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+ge c2 (Ag) | f(e d2)[Q:3/4=63] (DF) |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+A<F A2 (dc) | B<G B2 (ef) |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+ge c2 (Ac) | BA F2 (DF) |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+A<F A2 (dc) |  B<G B2 (ef) |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+ge c2 (Ag) | fe de f(g ||`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B |`,
+a<f) d2 (A=c) | (B<G) B2 (ef) |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+g<e c2 (BA) |  a^g a2 (fg) |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
+a<f d2 (A=c) | B<G B2 (ef) |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:13
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B |`,
-`X:14
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-A2) FA DAF(B | A2) FA defg |`,
-`X:15
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
-`X:16
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+g<e c2 (Ag) | fe d2 |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(DF) | A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | f(e d2)[Q:3/4=63] (DF) |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | fe de f(g ||`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+a<f) d2 (A=c) | (B<G) B2 (ef) | g<e c2 (BA) |  a^g a2 (fg) |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:7
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
-`X:8
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+a<f d2 (A=c) | B<G B2 (ef) | g<e c2 (Ag) | fe d2 |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(DF) | A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) | A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | f(e d2)[Q:3/4=63] (DF) |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) | A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | fe de f(g ||`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:4
-T:8 Bars - Cooley's Reel
+a<f) d2 (A=c) | (B<G) B2 (ef) | g<e c2 (BA) |  a^g a2 (fg) | a<f d2 (A=c) | B<G B2 (ef) | g<e c2 (Ag) | fe d2 |]`];
+        const audio_abc = [`X:31
+T:Donegal Mazurka 2
+R:mazurka
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
-        const audio_abc = [`X:26
-T:Cooley's Reel
-R:reel
-M:C|
-L:1/8
-Q:1/2=120
-K:Edor
- (F|:E)(BB)(A B2) E(B|B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(BB)(A B2) E(B|B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- B2 eBgf|eB- B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- B2 eBgf|eB- B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+M:3/4
+Q:3/4=63
+K:D
+(DF) | A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) | A<F A2 (dc) | B<G B2 (ef) | 
+ge c2 (Ag) |1 f(e d2) :|2 fe de f(g || a<f) d2 (A=c) | (B<G) B2 (ef) | g<e c2 (BA) | 
+a^g a2 (fg) | a<f d2 (A=c) | B<G B2 (ef) | g<e c2 (Ag) |1 fe de f(g :|2 fe d2 |]`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+(DF) | A<F A2 (dc) | B<G B2 (ef) |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+ge c2 (Ac) | BA F2 (DF) |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+A<F A2 (dc) |  B<G B2 (ef) |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+ge c2 (Ag) | f(e d2)[Q:3/4=63] (DF) |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+A<F A2 (dc) | B<G B2 (ef) |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+ge c2 (Ac) | BA F2 (DF) |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+A<F A2 (dc) |  B<G B2 (ef) |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+ge c2 (Ag) | fe de f(g ||`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B |`,
+a<f) d2 (A=c) | (B<G) B2 (ef) |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+g<e c2 (BA) |  a^g a2 (fg) |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g |`,
+a<f d2 (A=c) | B<G B2 (ef) |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:13
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 ged(B |`,
-`X:14
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-A2) FA DAF(B | A2) FA defg |`,
-`X:15
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 def(g |`,
-`X:16
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+g<e c2 (Ag) | fe d2 |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(DF) | A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | f(e d2)[Q:3/4=63] (DF) |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | fe de f(g ||`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+a<f) d2 (A=c) | (B<G) B2 (ef) | g<e c2 (BA) |  a^g a2 (fg) |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:7
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
-`X:8
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+a<f d2 (A=c) | B<G B2 (ef) | g<e c2 (Ag) | fe d2 |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(DF) | A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) | A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | f(e d2)[Q:3/4=63] (DF) |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+A<F A2 (dc) | B<G B2 (ef) | ge c2 (Ac) | BA F2 (DF) | A<F A2 (dc) |  B<G B2 (ef) | ge c2 (Ag) | fe de f(g ||`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - Donegal Mazurka 2
 L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
+Q:3/4=63
+M:3/4
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:4
-T:8 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
+a<f) d2 (A=c) | (B<G) B2 (ef) | g<e c2 (BA) |  a^g a2 (fg) | a<f d2 (A=c) | B<G B2 (ef) | g<e c2 (Ag) | fe d2 |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;

@@ -64,532 +64,406 @@
         }
     </style>
     <script>
-        const render_abc = [`X:26
-T:Cooley's Reel
+        const render_abc = [`X:25
+T:The Silver Spear
 R:reel
-M:C|
 L:1/8
+M:2/2
 Q:1/2=120
-K:Edor
- (F|:E)(B{/d}B)(A B2) E(B|{/d}B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(B{/c}B)(A B2) E(B|{/d}B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- !turn!B2 eBgf|eB- !turn!B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- !turn!B2 eBgf|eB- !turn!B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+K:D
+(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | 
+(FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | !turn!(g3 e) !turn!(f3 e) | dfed({Bd)} B2 AG :| 
+(f2 a)(f b)(fa)(f |{/a} gf)e(d Bc)d(e | f2) af bfa(f |{/a} gf)ed{Bd} B2 A2 | (f2 a)(f b)(fa)(f | 
+{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) |1 dfed{Bd} B2 A2 :|2 dfed B2 AG | [DA]4|]`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+dfed{Bd} B2 AG | (f2 a)(f b)(fa)(f |`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B |`,
+{/a} gf)e(d Bc)d(e | f2) af bfa(f |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+{/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
+{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:13
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B |`,
-`X:14
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-A2) FA DAF(B | A2) FA defg |`,
-`X:15
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
-`X:16
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+dfed B2 AG | [DA]4 |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | (f2 a)(f b)(fa)(f |`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:7
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
-`X:8
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | (f2 a)(f b)(fa)(f |`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:4
-T:8 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
-        const audio_abc = [`X:26
-T:Cooley's Reel
+{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f | {/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`];
+        const audio_abc = [`X:25
+T:The Silver Spear
 R:reel
-M:C|
 L:1/8
+M:2/2
 Q:1/2=120
-K:Edor
- (F|:E)(BB)(A B2) E(B|B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(BB)(A B2) E(B|B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- B2 eBgf|eB- B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- B2 eBgf|eB- B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+K:D
+(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | 
+(FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed( B2 AG :| 
+(f2 a)(f b)(fa)(f | gf)e(d Bc)d(e | f2) af bfa(f | gf)ed B2 A2 | (f2 a)(f b)(fa)(f | 
+ gf)e(d Bd)ef | (g3 e) (f3 e) |1 dfed B2 A2 :|2 dfed B2 AG | [DA]4|]`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+dfed B2 A2 | (FA) (3AA(A BA)FA |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+dfe(d Bd)ef | (g3 e) (f3 e) |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+dfe(d Bc)dA | (FA) (3AA(A BA)FA |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+dfed B2 A2 | (FA) (3AA(A BA)FA |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+dfe(d Bd)ef | (g3 e) (f3 e) |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+dfed B2 AG | (f2 a)(f b)(fa)(f |`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B |`,
+ gf)e(d Bc)d(e | f2) af bfa(f |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+ gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g |`,
+ gf)e(d Bd)ef | (g3 e) (f3 e) |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:13
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 ged(B |`,
-`X:14
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-A2) FA DAF(B | A2) FA defg |`,
-`X:15
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 def(g |`,
-`X:16
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+dfed B2 AG | [DA]4 |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | (f2 a)(f b)(fa)(f |`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+ gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:7
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
-`X:8
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+ gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | (f2 a)(f b)(fa)(f |`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Silver Spear
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
-`X:4
-T:8 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
+ gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |  gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;

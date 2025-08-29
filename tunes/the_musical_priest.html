@@ -64,532 +64,462 @@
         }
     </style>
     <script>
-        const render_abc = [`X:26
-T:Cooley's Reel
+        const render_abc = [`X:44
+T:The Musical Priest
 R:reel
-M:C|
 L:1/8
+M:2/2
 Q:1/2=120
-K:Edor
- (F|:E)(B{/d}B)(A B2) E(B|{/d}B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(B{/c}B)(A B2) E(B|{/d}B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- !turn!B2 eBgf|eB- !turn!B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- !turn!B2 eBgf|eB- !turn!B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+K:D
+(BA) | F(B{/d}BA) !turn!B3 (d | cB)A(f e)(cB)A | F(B{/d}BA) !turn!B3 (d | cB)A(c B2) :| 
+(Bc) | d2{/e} (dc) dfe(d | (3cBA) eA fAe(A | dc)Bc def(b | af)e(c B2) (Bc) | 
+dDFA dfe(d | (3cBA) eA fAe(A | dc)Bc def(b | af)e(c B2) (Bc) | (dB) (3.B.B.B baf(b | 
+af)e(c AB)ce | (dB) (3.B.B.B baf(b | af)e(c B2) (Bc) | (dB) (3.B.B.B baf(b | 
+af)e(c AB)ce |dcBc def(b | af)e(c B2) |]`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+(BA) | F(B{/d}BA) !turn!B3 (d | cB)A(f e)(cB)A |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+F(B{/d}BA) !turn!B3 (d | c)BA(c B2)[Q:1/2=120] (BA) |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+F(B{/d}BA) !turn!B3 (d | cB)A(f e)(cB)A |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+ F(B{/d}BA) !turn!B3 (d | cB)A(c B2) |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+ (Bc) | d2{/e} (dc) dfe(d |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+(3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+af)e(c B2) (Bc) | dDFA dfe(d |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+(3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+af)e(c AB)ce | (dB) (3.B.B.B baf(b |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
+af)e(c AB)ce | dcBc def(b |`,
 `X:13
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B |`,
-`X:14
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-A2) FA DAF(B | A2) FA defg |`,
-`X:15
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
-`X:16
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+af)e(c B2) |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(BA) | F(B{/d}BA) !turn!B3 (d | cB)A(f e)(cB)A | F(B{/d}BA) !turn!B3 (d | c)BA(c B2)[Q:1/2=120] (BA) |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+F(B{/d}BA) !turn!B3 (d | cB)A(f e)(cB)A |  F(B{/d}BA) !turn!B3 (d | cB)A(c B2) |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+ (Bc) | d2{/e} (dc) dfe(d | (3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+af)e(c B2) (Bc) | dDFA dfe(d | (3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | (dB) (3.B.B.B baf(b |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | dcBc def(b |`,
 `X:7
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
-`X:8
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+af)e(c B2) |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(BA) | F(B{/d}BA) !turn!B3 (d | cB)A(f e)(cB)A | F(B{/d}BA) !turn!B3 (d | c)BA(c B2)[Q:1/2=120] (BA) | F(B{/d}BA) !turn!B3 (d | cB)A(f e)(cB)A |  F(B{/d}BA) !turn!B3 (d | cB)A(c B2) |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+ (Bc) | d2{/e} (dc) dfe(d | (3cBA) eA fAe(A | dc)Bc def(b | af)e(c B2) (Bc) | dDFA dfe(d | (3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | (dB) (3.B.B.B baf(b | af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | dcBc def(b |`,
 `X:4
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
-        const audio_abc = [`X:26
-T:Cooley's Reel
+af)e(c B2) |]`];
+        const audio_abc = [`X:44
+T:The Musical Priest
 R:reel
-M:C|
 L:1/8
+M:2/2
 Q:1/2=120
-K:Edor
- (F|:E)(BB)(A B2) E(B|B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(BB)(A B2) E(B|B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- B2 eBgf|eB- B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- B2 eBgf|eB- B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+K:D
+(BA) | F(BBA) B3 (d | cB)A(f e)(cB)A | F(BBA) B3 (d | cB)A(c B2) :| 
+(Bc) | d2 (dc) dfe(d | (3cBA) eA fAe(A | dc)Bc def(b | af)e(c B2) (Bc) | 
+dDFA dfe(d | (3cBA) eA fAe(A | dc)Bc def(b | af)e(c B2) (Bc) | (dB) (3.B.B.B baf(b | 
+af)e(c AB)ce | (dB) (3.B.B.B baf(b | af)e(c B2) (Bc) | (dB) (3.B.B.B baf(b | 
+af)e(c AB)ce |dcBc def(b | af)e(c B2) |]`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+(BA) | F(BBA) B3 (d | cB)A(f e)(cB)A |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+F(BBA) B3 (d | c)BA(c B2)[Q:1/2=120] (BA) |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+F(BBA) B3 (d | cB)A(f e)(cB)A |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+ F(BBA) B3 (d | cB)A(c B2) |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+ (Bc) | d2 (dc) dfe(d |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+(3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+af)e(c B2) (Bc) | dDFA dfe(d |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+(3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+af)e(c AB)ce | (dB) (3.B.B.B baf(b |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
+af)e(c AB)ce | dcBc def(b |`,
 `X:13
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 ged(B |`,
-`X:14
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-A2) FA DAF(B | A2) FA defg |`,
-`X:15
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 def(g |`,
-`X:16
-T:2 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+af)e(c B2) |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(BA) | F(BBA) B3 (d | cB)A(f e)(cB)A | F(BBA) B3 (d | c)BA(c B2)[Q:1/2=120] (BA) |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+F(BBA) B3 (d | cB)A(f e)(cB)A |  F(BBA) B3 (d | cB)A(c B2) |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+ (Bc) | d2 (dc) dfe(d | (3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+af)e(c B2) (Bc) | dDFA dfe(d | (3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | (dB) (3.B.B.B baf(b |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | dcBc def(b |`,
 `X:7
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
-`X:8
-T:4 Bars - Cooley's Reel
-L:1/8
-Q:1/2=120
-M:2/2
-K:Edor
-V:1 treble 
-V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+af)e(c B2) |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(BA) | F(BBA) B3 (d | cB)A(f e)(cB)A | F(BBA) B3 (d | c)BA(c B2)[Q:1/2=120] (BA) | F(BBA) B3 (d | cB)A(f e)(cB)A |  F(BBA) B3 (d | cB)A(c B2) |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+ (Bc) | d2 (dc) dfe(d | (3cBA) eA fAe(A | dc)Bc def(b | af)e(c B2) (Bc) | dDFA dfe(d | (3cBA) eA fAe(A | dc)Bc def(b |`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | (dB) (3.B.B.B baf(b | af)e(c B2) (Bc) |  (dB) (3.B.B.B baf(b | af)e(c AB)ce | dcBc def(b |`,
 `X:4
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Musical Priest
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:D
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
+af)e(c B2) |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Practice</title>
     <link rel="stylesheet" href="../css/abcjs-audio.css">
     <script src="../js/abcjs-basic-min.js" defer></script>
@@ -17,26 +16,30 @@
         }
 
         .tune_selector,
-        .audio_controls {
+        .audio_controls,
+        .trainer_controls {
             display: flex;
             justify-content: center;
             padding: 10px;
+            gap: 10px;
+        }
+
+        button,
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
         }
 
         button {
-            padding: 10px;
-            margin: 10px;
-            font-size: 16px;
-            border-radius: 8px;
+            margin: 5px;
         }
 
         select {
             border: 1px solid;
             border-radius: 12px;
-            padding: 10px 12px;
             outline: none;
             transition: border-color 0.2s;
-            font-size: 16px;
             min-width: 120px;
         }
 
@@ -52,17 +55,18 @@
             font-weight: bold;
         }
 
-        .hide-active{
-            display: none !important;;
+        .hide-active {
+            display: none !important;
         }
 
         #audio_paper {
             display: none;
         }
     </style>
-    <script type="text/javascript">
+    <script>
         const render_abc = [`X:14
 T:Ballydesmond Polka - No. 2
+R:polka
 L:1/8
 M:2/4
 Q:1/4=138
@@ -414,6 +418,7 @@ V:1
 c)(e d)(B | A2) |]`];
         const audio_abc = [`X:14
 T:Ballydesmond Polka - No. 2
+R:polka
 L:1/8
 M:2/4
 Q:1/4=138
@@ -763,55 +768,52 @@ K:G
 V:1 treble 
 V:1
 c)(e d)(B | A2) |]`];
-        
         let currentTune = 0;
+        let hiddenMeasures = 0;
+        let totalMeasures = 0;
         let synthControl;
         let isLooping = false;
-        let isTrainer = false;
-        let currentWarp;
+        let isSpeedTrainer = false;
+        let isMemoryTrainer = false;
+        let loopInProgress = false;
 
-        const abcOptions = {
-            add_classes: true,
-            responsive: "resize"
-        };
+        const abcOptions = { add_classes: true, responsive: "resize" };
 
         function load() {
             const actions = {
                 ".previous": previous,
                 ".next": next,
                 ".loop": toggleLoop,
-                ".start": start,
-                ".restart": restart,
+                ".start": () => synthControl?.play(),
+                ".restart": () => synthControl?.restart(),
+                ".warp25": () => warp(25),
                 ".warp50": () => warp(50),
                 ".warp75": () => warp(75),
                 ".warp100": () => warp(100),
-                ".trainer": toggleTrainer,
-                ".hide": toggleHide
+                ".speedtrainer": toggleSpeedTrainer,
+                ".memorytrainer": toggleMemoryTrainer,
+                ".hide": () => document.querySelector("#render_paper")?.classList.toggle("hide-active")
             };
 
             // Attach button listeners
-            Object.entries(actions).forEach(([selector, handler]) => {
-                const el = document.querySelector(selector);
-                if (el) el.addEventListener("click", handler);
-            });
+            Object.entries(actions).forEach(([selector, handler]) =>
+                document.querySelector(selector)?.addEventListener("click", handler)
+            );
 
             // Populate tune dropdown
             const tuneSelect = document.getElementById("tuneSelect");
-            render_abc.forEach((tune, index) => {
+            render_abc.forEach((tune, i) => {
                 const option = document.createElement("option");
-                option.value = index;
-                const title = (tune.match(/\nT:\s*(.+)/) || [null, "Untitled"])[1].trim();
-                option.textContent = `${index + 1} - ${title}`;
+                option.value = i;
+                option.textContent = `${i + 1} - ${(tune.match(/\nT:\s*(.+)/) || [, "Untitled"])[1].trim()}`;
                 tuneSelect.appendChild(option);
             });
 
-            // Handle selection change
             tuneSelect.addEventListener("change", () => {
                 currentTune = parseInt(tuneSelect.value, 10);
                 setTune(true);
             });
 
-            // Setup synth controller
             if (ABCJS.synth.supportsAudio()) {
                 synthControl = new ABCJS.synth.SynthController();
                 synthControl.load("#audio", false, {
@@ -822,7 +824,7 @@ c)(e d)(B | A2) |]`];
                     displayWarp: true
                 });
             } else {
-                console.log("Audio is not supported in this browser");
+                console.log("Audio not supported in this browser");
             }
 
             setTune(false);
@@ -831,116 +833,132 @@ c)(e d)(B | A2) |]`];
         function toggleLoop() {
             if (!synthControl) return;
             isLooping = !isLooping;
-            synthControl.toggleLoop();
+            synthControl.toggleLoop(true);
             document.querySelector(".loop")?.classList.toggle("loop-active");
-        }
-
-        function start() {
-            synthControl?.play();
-        }
-
-        function restart() {
-            synthControl?.restart();
+            synthControl.play();
+            if (!isLooping) restart();
         }
 
         function warp(amount) {
             if (!synthControl) return;
             synthControl.setWarp(amount);
-
-            document.querySelectorAll(".warp50, .warp75, .warp100")
+            document.querySelectorAll(".warp25, .warp50, .warp75, .warp100")
                 .forEach(btn => btn.classList.remove("warp-active"));
-
             document.querySelector(`.warp${amount}`)?.classList.add("warp-active");
         }
 
-        function toggleHide() {
-            document.querySelector("#render_paper")?.classList.toggle("hide-active");
+        function toggleSpeedTrainer() {
+            isSpeedTrainer = !isSpeedTrainer;
+
+            if (isSpeedTrainer) {
+                synthControl?.setWarp(50);
+                synthControl?.play();
+            }
+
+            document.querySelector(".speedtrainer")?.classList.toggle("loop-active");
+
         }
 
-        function toggleTrainer() {
-            isTrainer = !isTrainer;
-            synthControl?.setWarp(50);
-            document.querySelector(".trainer")?.classList.toggle("loop-active");
-            synthControl?.play();
+        function toggleMemoryTrainer() {
+            isMemoryTrainer = !isMemoryTrainer;
+            hiddenMeasures = 0;
+
+            // Reset all measures visible
+            for (let i = 0; i < totalMeasures; i++) {
+                document.querySelectorAll(`.abcjs-mm${i}`).forEach(m => m.style.display = "inline");
+            }
+
+            if (isMemoryTrainer) {
+                totalMeasures = ABCJS.extractMeasures(render_abc[currentTune])[0].measures.length;
+                document.querySelector(".memorytrainer")?.classList.add("loop-active");
+                toggleLoop();
+            } else {
+                toggleLoop();
+                document.querySelector(".memorytrainer")?.classList.remove("loop-active");
+            }
         }
 
         function handlePlaybackEnded() {
-            if (!isTrainer) return;
-
-            currentWarp = parseInt(document.querySelector(".abcjs-midi-tempo")?.value, 10) || 0;
-
-            if (currentWarp >= 100) {
-                isTrainer = false;
-                document.querySelector(".trainer")?.classList.remove("loop-active");
-                return;
+            if (isSpeedTrainer) {
+                let currentWarp = parseInt(document.querySelector(".abcjs-midi-tempo")?.value, 10) || 0;
+                if (currentWarp >= 100) {
+                    isSpeedTrainer = false;
+                    document.querySelector(".speedtrainer")?.classList.remove("loop-active");
+                    return;
+                }
+                synthControl.setWarp(currentWarp + 10);
+                return synthControl.play();
             }
 
-            synthControl.restart();
-            synthControl.setWarp(currentWarp + 10);
-            synthControl.play();
+            if (isMemoryTrainer && !loopInProgress) {
+                loopInProgress = true;
+                if (hiddenMeasures < totalMeasures) {
+                    document.querySelectorAll(`.abcjs-mm${hiddenMeasures}`).forEach(m => m.style.display = "none");
+                    hiddenMeasures++;
+                } else {
+                    toggleLoop();
+                    isMemoryTrainer = false;
+                    for (let i = 0; i < totalMeasures; i++) {
+                        document.querySelectorAll(`.abcjs-mm${i}`).forEach(m => m.style.display = "inline");
+                    }
+                    document.querySelector(".memorytrainer")?.classList.remove("loop-active");
+                    return;
+                }
+            }
+            setTimeout(() => loopInProgress = false, 500);
         }
 
         function setTune(userAction) {
             if (!synthControl) return;
-
             synthControl.disable(true);
             document.getElementById("tuneSelect").value = currentTune;
 
-            // Render ABC
             ABCJS.renderAbc("render_paper", render_abc[currentTune], abcOptions);
             const audioObj = ABCJS.renderAbc("audio_paper", audio_abc[currentTune], {})[0];
 
             synthControl.setTune(audioObj, userAction, { onEnded: handlePlaybackEnded })
                 .then(() => {
-                    console.log("Audio successfully loaded.");
                     if (isLooping) {
                         synthControl.toggleLoop();
                         document.querySelector(".loop")?.classList.add("loop-active");
                     }
                 })
-                .catch(error => console.warn("Audio problem:", error));
+                .catch(err => console.warn("Audio problem:", err));
         }
 
-        function previous() {
-            currentTune = (currentTune - 1 + render_abc.length) % render_abc.length;
-            setTune(true);
-        }
-
-        function next() {
-            currentTune = (currentTune + 1) % render_abc.length;
-            setTune(true);
-        }
+        const previous = () => { currentTune = (currentTune - 1 + render_abc.length) % render_abc.length; setTune(true); };
+        const next = () => { currentTune = (currentTune + 1) % render_abc.length; setTune(true); };
+        const restart = () => synthControl?.restart();
 
     </script>
 </head>
 
 <body onload="load()">
-    <header>
-    </header>
     <div class="container">
         <main>
-            <div class="button_container">
-                <div class="tune_selector">
-                    <button class="previous">Previous Tune</button>
-                    <select id="tuneSelect" aria-label="Select tune"></select>
-                    <button class="next">Next Tune</button>
-                </div>
-                <div class="audio_controls">
-                    <button class="start">Start/Pause</button>
-                    <button class="restart">Restart</button>
-                    <button class="loop">Loop</button>
-                    <button class="warp50">50%</button>
-                    <button class="warp75">75%</button>
-                    <button class="warp100">100%</button>
-                    <button class="trainer">Speed Trainer</button>
-                    <button class="hide">Hide Notation</button>
-                </div>
+            <div class="tune_selector">
+                <button class="previous">Previous Tune</button>
+                <select id="tuneSelect" aria-label="Select tune"></select>
+                <button class="next">Next Tune</button>
+            </div>
+            <div class="audio_controls">
+                <button class="start">Start/Pause</button>
+                <button class="restart">Restart</button>
+                <button class="loop">Loop</button>
+                <button class="warp25">25%</button>
+                <button class="warp50">50%</button>
+                <button class="warp75">75%</button>
+                <button class="warp100">100%</button>
+            </div>
+            <div class="trainer_controls">
+                <button class="speedtrainer">Speed Trainer</button>
+                <button class="memorytrainer">Memory Trainer</button>
+                <button class="hide">Hide Notation</button>
             </div>
         </main>
         <div id="render_paper"></div>
         <div id="audio_paper"></div>
         <div id="audio"></div>
-        </main>
     </div>
 </body>
 

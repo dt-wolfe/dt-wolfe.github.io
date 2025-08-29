@@ -64,532 +64,712 @@
         }
     </style>
     <script>
-        const render_abc = [`X:26
-T:Cooley's Reel
+        const render_abc = [`X:24
+T:The Teetotaller's Reel
 R:reel
-M:C|
 L:1/8
+M:2/2
 Q:1/2=120
-K:Edor
- (F|:E)(B{/d}B)(A B2) E(B|{/d}B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(B{/c}B)(A B2) E(B|{/d}B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- !turn!B2 eBgf|eB- !turn!B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- !turn!B2 eBgf|eB- !turn!B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+K:G
+(3.D.E(F | G2) (GF) GAB(c | d)B  ge dBAc | B(E{G}ED) EFGA | (B(G)A)(F GF)ED | G2 (GF) GAB(c | 
+d)B ge dBAc | B(E{G}ED) EFGA | (BG)A(F G2) :| GA | B2 ([Be]2 e3) (f |{a} ge)af gfed | 
+B2 d2 !turn!d3 (e | !turn!f3) (a g)fed | B2 e2 e3 (f |{a} ge)af gfed | B(E{G}ED) EFGA | 
+BGA(F G2) :|`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+(3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+B(E{G}ED) EFGA | (B(G)A)(F GF)ED |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+ G2 (GF) GAB(c | d)B ge dBAc |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+B(E{G}ED) EFGA | (BG)A(F G2)[Q:1/2=120] (3.D.E(F |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G |`,
+G2) (GF) GAB(c | d)B ge dBAc |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+B(E{G}ED) EFGA | (B(G)A)(F GF)ED |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g |`,
+ G2 (GF) GAB(c | d)B ge dBAc |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+B(E{G}ED) EFGA | (BG)A(F G2) |`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B |`,
+GA | B2 ([Be]2 e3) (f |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+{a} ge)af gfed | B2 d2 !turn!d3 (e |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
+!turn!f3) (a g)fed |  B2 e2 e3 (f |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
+{a} ge)af gfed | B(E{G}ED) EFGA |`,
 `X:13
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B |`,
+BGA(F G2)[Q:1/2=120] (3.D.E(F | G2) (GF) GAB(c |`,
 `X:14
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+d)B ge dBAc | B(E{G}ED) EFGA |`,
 `X:15
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g |`,
+(B(G)A)(F GF)ED |  G2 (GF) GAB(c |`,
 `X:16
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+d)B ge dBAc | B(E{G}ED) EFGA |`,
+`X:17
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+(BG)A(F G2) | GA |`,
+`X:18
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B2 ([Be]2 e3) (f | {a} ge)af gfed |`,
+`X:19
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B2 d2 !turn!d3 (e | !turn!f3) (a g)fed |`,
+`X:20
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+ B2 e2 e3 (f | {a} ge)af gfed |`,
+`X:21
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B(E{G}ED) EFGA | BGA(F G2) |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (B(G)A)(F GF)ED |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+ G2 (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (BG)A(F G2)[Q:1/2=120] (3.D.E(F |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+G2) (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (B(G)A)(F GF)ED |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+ G2 (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (BG)A(F G2) |`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+GA | B2 ([Be]2 e3) (f | {a} ge)af gfed | B2 d2 !turn!d3 (e |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+!turn!f3) (a g)fed |  B2 e2 e3 (f | {a} ge)af gfed | B(E{G}ED) EFGA |`,
 `X:7
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+BGA(F G2)[Q:1/2=120] (3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA |`,
 `X:8
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+(B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA |`,
+`X:9
+T:4 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+(BG)A(F G2) | GA | B2 ([Be]2 e3) (f | {a} ge)af gfed |`,
+`X:10
+T:4 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B2 d2 !turn!d3 (e | !turn!f3) (a g)fed |  B2 e2 e3 (f | {a} ge)af gfed |`,
+`X:11
+T:4 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B(E{G}ED) EFGA | BGA(F G2) |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(F | E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (BG)A(F G2)[Q:1/2=120] (3.D.E(F |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(B{/d}B)(A B2) E(B | {/d} B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(B{/c}B)(A B2) E(B | {/d} B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+G2) (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (BG)A(F G2) |`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf |  eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+GA | B2 ([Be]2 e3) (f | {a} ge)af gfed | B2 d2 !turn!d3 (e | !turn!f3) (a g)fed |  B2 e2 e3 (f | {a} ge)af gfed | B(E{G}ED) EFGA |`,
 `X:4
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- !turn!B2 eBgf | eB- !turn!B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- !turn!B2 eBgf | eB- !turn!B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
-        const audio_abc = [`X:26
-T:Cooley's Reel
+BGA(F G2)[Q:1/2=120] (3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA | (B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(E{G}ED) EFGA |`,
+`X:5
+T:8 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+(BG)A(F G2) | GA | B2 ([Be]2 e3) (f | {a} ge)af gfed | B2 d2 !turn!d3 (e | !turn!f3) (a g)fed |  B2 e2 e3 (f | {a} ge)af gfed |`,
+`X:6
+T:8 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B(E{G}ED) EFGA | BGA(F G2) |]`];
+        const audio_abc = [`X:24
+T:The Teetotaller's Reel
 R:reel
-M:C|
 L:1/8
+M:2/2
 Q:1/2=120
-K:Edor
- (F|:E)(BB)(A B2) E(B|B2) AB dBA(G|(3FED) AD BDA(D|(3FED) AD BAG(F|
-E)(BB)(A B2) E(B|B2) AB def(g|af)e(c dB)A(F|1 DE)FD E3 (F:|2 DE)FD E2 (gf) |] 
-|: eB- B2 eBgf|eB- B2 ged(B|A2) FA DAF(B|A2) FA defg|
-eB- B2 eBgf|eB- B2 def(g|af)e(c dB)A(F|1 DE)FD E2 (gf):|2  DE)FD E3 |]`,
+K:G
+(3.D.E(F | G2) (GF) GAB(c | d)B  ge dBAc | B(EED) EFGA | (B(G)A)(F GF)ED | G2 (GF) GAB(c | 
+d)B ge dBAc | B(EED) EFGA | (BG)A(F G2) :| GA | B2 ([Be]2 e3) (f | ge)af gfed | 
+B2 d2 d3 (e | f3) (a g)fed | B2 e2 e3 (f | ge)af gfed | B(EED) EFGA | 
+BGA(F G2) :|`,
 `X:1
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+(3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc |`,
 `X:2
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(3FED) AD BDA(D | (3FED) AD BAG(F |`,
+B(EED) EFGA | (B(G)A)(F GF)ED |`,
 `X:3
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+ G2 (GF) GAB(c | d)B ge dBAc |`,
 `X:4
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E3 (F |`,
+B(EED) EFGA | (BG)A(F G2)[Q:1/2=120] (3.D.E(F |`,
 `X:5
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G |`,
+G2) (GF) GAB(c | d)B ge dBAc |`,
 `X:6
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+B(EED) EFGA | (B(G)A)(F GF)ED |`,
 `X:7
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g |`,
+ G2 (GF) GAB(c | d)B ge dBAc |`,
 `X:8
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)AF | DEFD E2 (gf) |]`,
+B(EED) EFGA | (BG)A(F G2) |`,
 `X:9
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B |`,
+GA | B2 ([Be]2 e3) (f |`,
 `X:10
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+ ge)af gfed | B2 d2 d3 (e |`,
 `X:11
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g |`,
+f3) (a g)fed |  B2 e2 e3 (f |`,
 `X:12
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)A(F | DE)FD E2 (gf) |`,
+ ge)af gfed | B(EED) EFGA |`,
 `X:13
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 ged(B |`,
+BGA(F G2)[Q:1/2=120] (3.D.E(F | G2) (GF) GAB(c |`,
 `X:14
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-A2) FA DAF(B | A2) FA defg |`,
+d)B ge dBAc | B(EED) EFGA |`,
 `X:15
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g |`,
+(B(G)A)(F GF)ED |  G2 (GF) GAB(c |`,
 `X:16
-T:2 Bars - Cooley's Reel
+T:2 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-af)e(c dB)AF |  DEFD E3 |]`,
+d)B ge dBAc | B(EED) EFGA |`,
+`X:17
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+(BG)A(F G2) | GA |`,
+`X:18
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B2 ([Be]2 e3) (f |  ge)af gfed |`,
+`X:19
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B2 d2 d3 (e | f3) (a g)fed |`,
+`X:20
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+ B2 e2 e3 (f |  ge)af gfed |`,
+`X:21
+T:2 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B(EED) EFGA | BGA(F G2) |]`,
 `X:1
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F |`,
+(3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (B(G)A)(F GF)ED |`,
 `X:2
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+ G2 (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (BG)A(F G2)[Q:1/2=120] (3.D.E(F |`,
 `X:3
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F |`,
+G2) (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (B(G)A)(F GF)ED |`,
 `X:4
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+ G2 (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (BG)A(F G2) |`,
 `X:5
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+GA | B2 ([Be]2 e3) (f |  ge)af gfed | B2 d2 d3 (e |`,
 `X:6
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+f3) (a g)fed |  B2 e2 e3 (f |  ge)af gfed | B(EED) EFGA |`,
 `X:7
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg |`,
+BGA(F G2)[Q:1/2=120] (3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(EED) EFGA |`,
 `X:8
-T:4 Bars - Cooley's Reel
+T:4 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`,
+(B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(EED) EFGA |`,
+`X:9
+T:4 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+(BG)A(F G2) | GA | B2 ([Be]2 e3) (f |  ge)af gfed |`,
+`X:10
+T:4 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B2 d2 d3 (e | f3) (a g)fed |  B2 e2 e3 (f |  ge)af gfed |`,
+`X:11
+T:4 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B(EED) EFGA | BGA(F G2) |]`,
 `X:1
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-(F | E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D | (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)A(F | DE)FD E3 (F |`,
+(3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (BG)A(F G2)[Q:1/2=120] (3.D.E(F |`,
 `X:2
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-E)(BB)(A B2) E(B |  B2) AB dBA(G | (3FED) AD BDA(D |  (3FED) AD BAG(F | E)(BB)(A B2) E(B |  B2) AB def(g | af)e(c dB)AF | DEFD E2 (gf) |]`,
+G2) (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (BG)A(F G2) |`,
 `X:3
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf |  eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)A(F | DE)FD E2 (gf) |`,
+GA | B2 ([Be]2 e3) (f |  ge)af gfed | B2 d2 d3 (e | f3) (a g)fed |  B2 e2 e3 (f |  ge)af gfed | B(EED) EFGA |`,
 `X:4
-T:8 Bars - Cooley's Reel
+T:8 Bars - The Teetotaller's Reel
 L:1/8
 Q:1/2=120
 M:2/2
-K:Edor
+K:G
 V:1 treble 
 V:1
-eB- B2 eBgf | eB- B2 ged(B | A2) FA DAF(B | A2) FA defg | eB- B2 eBgf | eB- B2 def(g | af)e(c dB)AF |  DEFD E3 |]`];
+BGA(F G2)[Q:1/2=120] (3.D.E(F | G2) (GF) GAB(c | d)B ge dBAc | B(EED) EFGA | (B(G)A)(F GF)ED |  G2 (GF) GAB(c | d)B ge dBAc | B(EED) EFGA |`,
+`X:5
+T:8 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+(BG)A(F G2) | GA | B2 ([Be]2 e3) (f |  ge)af gfed | B2 d2 d3 (e | f3) (a g)fed |  B2 e2 e3 (f |  ge)af gfed |`,
+`X:6
+T:8 Bars - The Teetotaller's Reel
+L:1/8
+Q:1/2=120
+M:2/2
+K:G
+V:1 treble 
+V:1
+B(EED) EFGA | BGA(F G2) |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;
