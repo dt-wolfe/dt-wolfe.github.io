@@ -216,13 +216,14 @@
             ABCJS.renderAbc("render_paper", render_abc[currentTune], abcOptions);
             const audioObj = ABCJS.renderAbc("audio_paper", audio_abc[currentTune], {})[0];
 
-            synthControl.setTune(audioObj, userAction, { onEnded: handlePlaybackEnded })
-                .then(() => {
-                    if (isLooping) {
-                        synthControl.toggleLoop();
-                        document.querySelector(".loop")?.classList.add("loop-active");
-                    }
-                })
+            synthControl.setTune(audioObj, userAction, {
+                onEnded: handlePlaybackEnded
+            }).then(() => {
+                if (isLooping) {
+                    synthControl.toggleLoop();
+                    document.querySelector(".loop")?.classList.add("loop-active");
+                }
+            })
                 .catch(err => console.warn("Audio problem:", err));
         }
 
