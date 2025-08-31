@@ -76,6 +76,8 @@
         let isSpeedTrainer = false;
         let isMemoryTrainer = false;
         let loopInProgress = false;
+        let startTimer = 0;
+        let endTimer = 0;
 
         const abcOptions = { add_classes: true, responsive: "resize" };
 
@@ -84,7 +86,7 @@
                 ".previous": previous,
                 ".next": next,
                 ".loop": toggleLoop,
-                ".start": () => synthControl?.play(),
+                ".start": start,//() => synthControl?.play(),
                 ".restart": () => synthControl?.restart(),
                 ".warp25": () => warp(25),
                 ".warp50": () => warp(50),
@@ -229,7 +231,29 @@
 
         const previous = () => { currentTune = (currentTune - 1 + render_abc.length) % render_abc.length; setTune(true); };
         const next = () => { currentTune = (currentTune + 1) % render_abc.length; setTune(true); };
+
+        function start() {
+            let startDelay = setInterval(function (e) { timeDelay(1, 10) }, 1000);
+
+            // synthControl?.play()
+        }
         const restart = () => synthControl?.restart();
+
+        function updateStatus(text) {
+            let el = document.querySelector("#status")
+            el.innerText = text
+        }
+        function timeDelay(begin, end) {
+            if (begin > end) {
+                console.log("ending interval");
+                clearInterval(e)
+            } else {
+                begin++;
+                updateStatus(`Waiting ${begin}`);
+                // }
+            }
+        }
+
 
     </script>
 </head>
@@ -257,6 +281,7 @@
                 <button class="hide">Hide Notation</button>
             </div>
         </main>
+        <div id="status">Status</div>
         <div id="render_paper"></div>
         <div id="audio_paper"></div>
         <div id="audio"></div>

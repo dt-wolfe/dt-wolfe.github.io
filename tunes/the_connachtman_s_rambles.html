@@ -64,374 +64,242 @@
         }
     </style>
     <script>
-        const render_abc = [`X:3
-T:Little Heathy Hill, The
-C:Moderate
-R:Air-Song
+        const render_abc = [`X:34
+T:The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
- (B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 (G>A) B3 c | %5
- (d>ed).c B2 (A>B) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 G>A G3 || D | GABc d2 d=e | %11
- f2 =ed c>AF7/4c/4 | d>edc B2 AB | GFD=E F2 (Bc) | (d>ed).c B2 A2 | (GBAG) (F2 DF) | %16
- (G>AG).F (D>CD).F | G2 G>A G3 || %18`,
+M:6/8
+Q:3/8=130
+K:D
+BAG |: FAA dAA | BAB dAG | FAA dfe | dBB{/d} (BAG) |
+FAA dAA | !turn!B3 def | gfe dfe |1 dBB BAG :|2 dBB B2 (g ||:
+f)bb fa(a | f)ef de(g | f)bb faa | fed e2 (g |
+f)bb fa(a | f)ef de(f | g)fe dfe |1 dBB B2 (g :|2 dBB B2|]`,
 `X:1
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) |`,
+BAG | FAA dAA | BAB dAG | FAA dfe | dBB{/d} (BAG) |`,
 `X:2
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(G>AG).F (D>CD).F | G2 (G>A) B3 c |`,
+ FAA dAA | !turn!B3 def | gfe dfe | dBB BAG |`,
 `X:3
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(d>ed).c B2 (A>B) | (GBAG) F2 (DF) |`,
+FAA dAA | BAB dAG | FAA dfe | dBB{/d} (BAG) |`,
 `X:4
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(G>AG).F (D>CD).F | G2 G>A G3 ||`,
+ FAA dAA | !turn!B3 def | gfe dfe | dBB B2 (g ||`,
 `X:5
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
- D | GABc d2 d=e |`,
+f)bb fa(a | f)ef de(g | f)bb faa | fed e2 (g |`,
 `X:6
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-f2 =ed c>AF7/4c/4 | d>edc B2 AB |`,
+ f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 g |`,
 `X:7
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-GFD=E F2 (Bc) |  (d>ed).c B2 A2 |`,
+fbb fa(a | f)ef de(g | f)bb faa |  fed e2 (g |`,
 `X:8
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(GBAG) (F2 DF) | (G>AG).F (D>CD).F |`,
-`X:9
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-G2 G>A G3 ||`,
+ f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 |]`,
 `X:1
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 (G>A) B3 c |`,
+BAG | FAA dAA | BAB dAG | FAA dfe | dBB{/d} (BAG) |  FAA dAA | !turn!B3 def | gfe dfe | dBB BAG |`,
 `X:2
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(d>ed).c B2 (A>B) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 G>A G3 ||`,
+FAA dAA | BAB dAG | FAA dfe | dBB{/d} (BAG) |  FAA dAA | !turn!B3 def | gfe dfe | dBB B2 (g ||`,
 `X:3
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
- D | GABc d2 d=e | f2 =ed c>AF7/4c/4 | d>edc B2 AB |`,
+f)bb fa(a | f)ef de(g | f)bb faa | fed e2 (g |  f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 g |`,
 `X:4
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-GFD=E F2 (Bc) |  (d>ed).c B2 A2 | (GBAG) (F2 DF) | (G>AG).F (D>CD).F |`,
-`X:5
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+fbb fa(a | f)ef de(g | f)bb faa |  fed e2 (g |  f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 |]`];
+        const audio_abc = [`X:34
+T:The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-G2 G>A G3 ||`,
+M:6/8
+Q:3/8=130
+K:D
+BAG |: FAA dAA | BAB dAG | FAA dfe | dBB (BAG) |
+FAA dAA | B3 def | gfe dfe |1 dBB BAG :|2 dBB B2 (g ||:
+f)bb fa(a | f)ef de(g | f)bb faa | fed e2 (g |
+f)bb fa(a | f)ef de(f | g)fe dfe |1 dBB B2 (g :|2 dBB B2|]`,
 `X:1
-T:8 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 (G>A) B3 c | (d>ed).c B2 (A>B) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 G>A G3 ||`,
+BAG | FAA dAA | BAB dAG | FAA dfe | dBB (BAG) |`,
 `X:2
-T:8 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
- D | GABc d2 d=e | f2 =ed c>AF7/4c/4 | d>edc B2 AB | GFD=E F2 (Bc) |  (d>ed).c B2 A2 | (GBAG) (F2 DF) | (G>AG).F (D>CD).F |`,
+ FAA dAA | B3 def | gfe dfe | dBB BAG |`,
 `X:3
-T:8 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-G2 G>A G3 ||`];
-        const audio_abc = [`X:3
-T:Little Heathy Hill, The
-C:Moderate
-R:Air-Song
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
- (B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 (G>A) B3 c | %5
- (d>ed).c B2 (A>B) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 G>A G3 || D | GABc d2 d=e | %11
- f2 =ed c>AF7/4c/4 | d>edc B2 AB | GFD=E F2 (Bc) | (d>ed).c B2 A2 | (GBAG) (F2 DF) | %16
- (G>AG).F (D>CD).F | G2 G>A G3 || %18`,
-`X:1
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-(B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) |`,
-`X:2
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-(G>AG).F (D>CD).F | G2 (G>A) B3 c |`,
-`X:3
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-(d>ed).c B2 (A>B) | (GBAG) F2 (DF) |`,
+FAA dAA | BAB dAG | FAA dfe | dBB (BAG) |`,
 `X:4
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(G>AG).F (D>CD).F | G2 G>A G3 ||`,
+ FAA dAA | B3 def | gfe dfe | dBB B2 (g ||`,
 `X:5
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
- D | GABc d2 d=e |`,
+f)bb fa(a | f)ef de(g | f)bb faa | fed e2 (g |`,
 `X:6
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-f2 =ed c>AF7/4c/4 | d>edc B2 AB |`,
+ f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 g |`,
 `X:7
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-GFD=E F2 (Bc) |  (d>ed).c B2 A2 |`,
+fbb fa(a | f)ef de(g | f)bb faa |  fed e2 (g |`,
 `X:8
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
+T:4 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(GBAG) (F2 DF) | (G>AG).F (D>CD).F |`,
-`X:9
-T:2 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-G2 G>A G3 ||`,
+ f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 |]`,
 `X:1
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 (G>A) B3 c |`,
+BAG | FAA dAA | BAB dAG | FAA dfe | dBB (BAG) |  FAA dAA | B3 def | gfe dfe | dBB BAG |`,
 `X:2
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-(d>ed).c B2 (A>B) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 G>A G3 ||`,
+FAA dAA | BAB dAG | FAA dfe | dBB (BAG) |  FAA dAA | B3 def | gfe dfe | dBB B2 (g ||`,
 `X:3
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
- D | GABc d2 d=e | f2 =ed c>AF7/4c/4 | d>edc B2 AB |`,
+f)bb fa(a | f)ef de(g | f)bb faa | fed e2 (g |  f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 g |`,
 `X:4
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
+T:8 Bars - The Connachtman's Rambles
 L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
+Q:3/8=130
+M:6/8
+K:D
 V:1 treble 
 V:1
-GFD=E F2 (Bc) |  (d>ed).c B2 A2 | (GBAG) (F2 DF) | (G>AG).F (D>CD).F |`,
-`X:5
-T:4 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-G2 G>A G3 ||`,
-`X:1
-T:8 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-(B/c/) | d2 (d>c) B2 (AB) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 (G>A) B3 c | (d>ed).c B2 (A>B) | (GBAG) F2 (DF) | (G>AG).F (D>CD).F | G2 G>A G3 ||`,
-`X:2
-T:8 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
- D | GABc d2 d=e | f2 =ed c>AF7/4c/4 | d>edc B2 AB | GFD=E F2 (Bc) |  (d>ed).c B2 A2 | (GBAG) (F2 DF) | (G>AG).F (D>CD).F |`,
-`X:3
-T:8 Bars - Little Heathy Hill, The
-C:Moderate
-L:1/8
-Q:1/4=110
-M:4/4
-K:Gmin
-V:1 treble 
-V:1
-G2 G>A G3 ||`];
+fbb fa(a | f)ef de(g | f)bb faa |  fed e2 (g |  f)bb fa(a | f)ef de(f | g)fe dfe | dBB B2 |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;

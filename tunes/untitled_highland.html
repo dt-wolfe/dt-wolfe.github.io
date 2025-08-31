@@ -64,456 +64,114 @@
         }
     </style>
     <script>
-        const render_abc = [`X:1
-T:Enchanted Valley, The
-C:Very Slow
-R:Air-Song
+        const render_abc = [`X:36
+T:Untitled Highland
+R:highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (G>A) (B/c/d/=e/) | f2 (gd/B/) |({/d} c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) | f2 (df) | %6
- (ga b).g |{/b} (ag f).d | (d{ed}c) BB | (AG{AG} F).D | (G/A/B/c/) (d{ed}c/>A/) | GG G z/ || G/ | %13
- Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) | (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | %19
- (G/A/B/c/) dd | (b/g/f/d/) c/A/F | GA (B{cB}A/G/) | (A>G) (FD) | (G/A/B/c/) (d{ed}c/>A/) | %24
- GG G z || %25`,
+M:2/2
+Q:1/2=88
+K:G
+e<AA(f e)(dB)d | e<AA(c B)(GB)d | e<AA(f e)((dB)d) |1 e(fge) dgfg :|2  e(fge) d2 (Bd) ||
+efg(a b<)gg(f |ef)gd B<GBd | efga b<gg(b |1 af)ge d2 (Bd) :|2 af)ged2 |]`,
 `X:1
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
+T:4 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-(G>A) (B/c/d/=e/) | f2 (gd/B/) | ({/d} c>B) GE |`,
+e<AA(f e)(dB)d | e<AA(c B)(GB)d | e<AA(f e)((dB)d) | e(fge) dgfg | [Q:1/2=88] e<AA(f e)(dB)d |`,
 `X:2
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
+T:4 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-F2 (D=E/^F/) | (G>A) (B/c/d/=e/) |`,
+e<AA(c B)(GB)d |  e<AA(f e)((dB)d) | e(fge) d2 (Bd) ||  efg(a b<)gg(f |`,
 `X:3
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
+T:4 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-f2 (df) | (ga b).g |`,
-`X:4
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-{/b} (ag f).d |  (d{ed}c) BB |`,
-`X:5
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (AG{AG} F).D | (G/A/B/c/) (d{ed}c/>A/) |`,
-`X:6
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-GG G z/ || G/ |`,
-`X:7
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-Bc (d/c/A/B/) | GG G>G |`,
-`X:8
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-Bd (g/f/d/c/) | dg g>(ga/) |`,
-`X:9
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D |`,
-`X:10
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-(G/A/B/c/) dd | (b/g/f/d/) c/A/F |`,
-`X:11
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-GA (B{cB}A/G/) | (A>G) (FD) |`,
-`X:12
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-(G/A/B/c/) (d{ed}c/>A/) | GG G z ||`,
+ef)gd B<GBd | efga b<ggb | afge d2 |]`,
 `X:1
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
+T:8 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-(G>A) (B/c/d/=e/) | f2 (gd/B/) | ({/d} c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) |`,
+e<AA(f e)(dB)d | e<AA(c B)(GB)d | e<AA(f e)((dB)d) | e(fge) dgfg | [Q:1/2=88] e<AA(f e)(dB)d | e<AA(c B)(GB)d |  e<AA(f e)((dB)d) | e(fge) d2 (Bd) ||  efg(a b<)gg(f |`,
 `X:2
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
+T:8 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-f2 (df) | (ga b).g | {/b} (ag f).d |  (d{ed}c) BB |`,
-`X:3
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
+ef)gd B<GBd | efga b<ggb | afge d2 |]`];
+        const audio_abc = [`X:36
+T:Untitled Highland
+R:highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (AG{AG} F).D | (G/A/B/c/) (d{ed}c/>A/) | GG G z/ || G/ |`,
-`X:4
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) |`,
-`X:5
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | (G/A/B/c/) dd | (b/g/f/d/) c/A/F |`,
-`X:6
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-GA (B{cB}A/G/) | (A>G) (FD) | (G/A/B/c/) (d{ed}c/>A/) | GG G z ||`,
+M:2/2
+Q:1/2=88
+K:G
+e<AA(f e)(dB)d | e<AA(c B)(GB)d | e<AA(f e)((dB)d) |1 e(fge) dgfg :|2  e(fge) d2 (Bd) ||
+efg(a b<)gg(f |ef)gd B<GBd | efga b<gg(b |1 af)ge d2 (Bd) :|2 af)ged2 |]`,
 `X:1
-T:8 Bars - Enchanted Valley, The
-C:Very Slow
+T:4 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-(G>A) (B/c/d/=e/) | f2 (gd/B/) | ({/d} c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) | f2 (df) | (ga b).g | {/b} (ag f).d |  (d{ed}c) BB |`,
+e<AA(f e)(dB)d | e<AA(c B)(GB)d | e<AA(f e)((dB)d) | e(fge) dgfg | [Q:1/2=88] e<AA(f e)(dB)d |`,
 `X:2
-T:8 Bars - Enchanted Valley, The
-C:Very Slow
+T:4 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
- (AG{AG} F).D | (G/A/B/c/) (d{ed}c/>A/) | GG G z/ || G/ | Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) |`,
+e<AA(c B)(GB)d |  e<AA(f e)((dB)d) | e(fge) d2 (Bd) ||  efg(a b<)gg(f |`,
 `X:3
-T:8 Bars - Enchanted Valley, The
-C:Very Slow
+T:4 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
- (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | (G/A/B/c/) dd | (b/g/f/d/) c/A/F | GA (B{cB}A/G/) | (A>G) (FD) | (G/A/B/c/) (d{ed}c/>A/) | GG G z ||`];
-        const audio_abc = [`X:1
-T:Enchanted Valley, The
-C:Very Slow
-R:Air-Song
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (G>A) (B/c/d/=e/) | f2 (gd/B/) |( c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) | f2 (df) | %6
- (ga b).g | (ag f).d | (dc) BB | (AG F).D | (G/A/B/c/) (dc/>A/) | GG G z/ || G/ | %13
- Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) | (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | %19
- (G/A/B/c/) dd | (b/g/f/d/) c/A/F | GA (BA/G/) | (A>G) (FD) | (G/A/B/c/) (dc/>A/) | %24
- GG G z || %25`,
+ef)gd B<GBd | efga b<ggb | afge d2 |]`,
 `X:1
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
+T:8 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-(G>A) (B/c/d/=e/) | f2 (gd/B/) | ( c>B) GE |`,
+e<AA(f e)(dB)d | e<AA(c B)(GB)d | e<AA(f e)((dB)d) | e(fge) dgfg | [Q:1/2=88] e<AA(f e)(dB)d | e<AA(c B)(GB)d |  e<AA(f e)((dB)d) | e(fge) d2 (Bd) ||  efg(a b<)gg(f |`,
 `X:2
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
+T:8 Bars - Untitled Highland
 L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
+Q:1/2=88
+M:2/2
+K:G
 V:1 treble 
 V:1
-F2 (D=E/^F/) | (G>A) (B/c/d/=e/) |`,
-`X:3
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-f2 (df) | (ga b).g |`,
-`X:4
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (ag f).d |  (dc) BB |`,
-`X:5
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (AG F).D | (G/A/B/c/) (dc/>A/) |`,
-`X:6
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-GG G z/ || G/ |`,
-`X:7
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-Bc (d/c/A/B/) | GG G>G |`,
-`X:8
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-Bd (g/f/d/c/) | dg g>(ga/) |`,
-`X:9
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D |`,
-`X:10
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-(G/A/B/c/) dd | (b/g/f/d/) c/A/F |`,
-`X:11
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-GA (BA/G/) | (A>G) (FD) |`,
-`X:12
-T:2 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-(G/A/B/c/) (dc/>A/) | GG G z ||`,
-`X:1
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-(G>A) (B/c/d/=e/) | f2 (gd/B/) | ( c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) |`,
-`X:2
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-f2 (df) | (ga b).g |  (ag f).d |  (dc) BB |`,
-`X:3
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (AG F).D | (G/A/B/c/) (dc/>A/) | GG G z/ || G/ |`,
-`X:4
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) |`,
-`X:5
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | (G/A/B/c/) dd | (b/g/f/d/) c/A/F |`,
-`X:6
-T:4 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-GA (BA/G/) | (A>G) (FD) | (G/A/B/c/) (dc/>A/) | GG G z ||`,
-`X:1
-T:8 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
-(G>A) (B/c/d/=e/) | f2 (gd/B/) | ( c>B) GE | F2 (D=E/^F/) | (G>A) (B/c/d/=e/) | f2 (df) | (ga b).g |  (ag f).d |  (dc) BB |`,
-`X:2
-T:8 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (AG F).D | (G/A/B/c/) (dc/>A/) | GG G z/ || G/ | Bc (d/c/A/B/) | GG G>G | Bd (g/f/d/c/) | dg g>(ga/) |`,
-`X:3
-T:8 Bars - Enchanted Valley, The
-C:Very Slow
-L:1/8
-Q:1/4=40
-M:2/4
-K:Bb
-V:1 treble 
-V:1
- (b/a/g/f/) (g/d/)d/>c/ | (BA/G/) (F/D/).D | (G/A/B/c/) dd | (b/g/f/d/) c/A/F | GA (BA/G/) | (A>G) (FD) | (G/A/B/c/) (dc/>A/) | GG G z ||`];
+ef)gd B<GBd | efga b<ggb | afge d2 |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;

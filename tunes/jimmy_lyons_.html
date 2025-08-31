@@ -64,244 +64,202 @@
         }
     </style>
     <script>
-        const render_abc = [`X:25
-T:The Silver Spear
-R:reel
+        const render_abc = [`X:39
+T:Jimmy Lyons'
 L:1/8
 M:2/2
-Q:1/2=120
-K:D
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 |
-(FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | !turn!(g3 e) !turn!(f3 e) |1 dfed({Bd)} B2 AG :|2 dfed({Bd)} B2 A2 ||:
-(f2 a)(f b)(fa)(f |{/a} gf)e(d Bc)d(e | f2) af bfa(f |{/a} gf)ed{Bd} B2 A2 |
-(f2 a)(f b)(fa)(f |{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) |1 dfed{Bd} B2 A2 :|2 dfed B2 AG | [DA]4|]`,
+K:A
+E2 |: Aaga e<(c A2) | E(dc)(d B)(EG)(B | A)aga e<(c A2) |1 EA(=GB) A2 E2 :|2 EA(=GB) A2 (A<f)||
+(e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B A2) (Af) |
+e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c |
+(e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B (3A)ce (3agf |
+e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c || A2|]`,
 `X:1
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
+E2 | Aaga e<(c A2) | E(dc)(d B)(EG)(B | A)aga e<(c A2) | EA(=GB) A2 E2 |`,
 `X:2
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
+Aaga e<(c A2) | E(dc)(d B)(EG)(B |  A)aga e<(c A2) | EA(=GB) A2 (A<f) ||`,
 `X:3
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B A2) (Af) |`,
 `X:4
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 || (f2 a)(f b)(fa)(f |`,
+ e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c |`,
 `X:5
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B (3A)ce (3agf |`,
 `X:6
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 | (f2 a)(f b)(fa)(f |`,
+e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c ||`,
 `X:7
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e |  f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
-`X:8
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`,
+A2 |]`,
 `X:1
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
+E2 | Aaga e<(c A2) | E(dc)(d B)(EG)(B | A)aga e<(c A2) | EA(=GB) A2 E2 | Aaga e<(c A2) | E(dc)(d B)(EG)(B |  A)aga e<(c A2) | EA(=GB) A2 (A<f) ||`,
 `X:2
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 || (f2 a)(f b)(fa)(f |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B A2) (Af) |  e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c |`,
 `X:3
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f | {/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 | (f2 a)(f b)(fa)(f |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B (3A)ce (3agf | e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c ||`,
 `X:4
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e |  f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f | {/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`];
-        const audio_abc = [`X:25
-T:The Silver Spear
-R:reel
+A2 |]`];
+        const audio_abc = [`X:39
+T:Jimmy Lyons'
 L:1/8
 M:2/2
-Q:1/2=120
-K:D
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 |
-(FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) |1 dfed( B2 AG :|2 dfed( B2 A2 ||:
-(f2 a)(f b)(fa)(f | gf)e(d Bc)d(e | f2) af bfa(f | gf)ed B2 A2 |
-(f2 a)(f b)(fa)(f | gf)e(d Bd)ef | (g3 e) (f3 e) |1 dfed B2 A2 :|2 dfed B2 AG | [DA]4|]`,
+K:A
+E2 |: Aaga e<(c A2) | E(dc)(d B)(EG)(B | A)aga e<(c A2) |1 EA(=GB) A2 E2 :|2 EA(=GB) A2 (A<f)||
+(e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B A2) (Af) |
+e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c |
+(e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B (3A)ce (3agf |
+e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c || A2|]`,
 `X:1
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
+E2 | Aaga e<(c A2) | E(dc)(d B)(EG)(B | A)aga e<(c A2) | EA(=GB) A2 E2 |`,
 `X:2
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
+Aaga e<(c A2) | E(dc)(d B)(EG)(B |  A)aga e<(c A2) | EA(=GB) A2 (A<f) ||`,
 `X:3
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B A2) (Af) |`,
 `X:4
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 || (f2 a)(f b)(fa)(f |`,
+ e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c |`,
 `X:5
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
- gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B (3A)ce (3agf |`,
 `X:6
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
- gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 | (f2 a)(f b)(fa)(f |`,
+e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c ||`,
 `X:7
-T:4 Bars - The Silver Spear
+T:4 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
- gf)e(d Bc)d(e |  f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
-`X:8
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
- gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`,
+A2 |]`,
 `X:1
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
+E2 | Aaga e<(c A2) | E(dc)(d B)(EG)(B | A)aga e<(c A2) | EA(=GB) A2 E2 | Aaga e<(c A2) | E(dc)(d B)(EG)(B |  A)aga e<(c A2) | EA(=GB) A2 (A<f) ||`,
 `X:2
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 || (f2 a)(f b)(fa)(f |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B A2) (Af) |  e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c |`,
 `X:3
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
- gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |  gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 | (f2 a)(f b)(fa)(f |`,
+ (e<c)ce f<ddc | d<BBa g<eef | e<cce f<dd(f | (3efe) (3dc(B (3A)ce (3agf | e<cce f<ddc | d<BBa g<eef | e<cce f<df(a | (3gfe) b(g a)(fe)c ||`,
 `X:4
-T:8 Bars - The Silver Spear
+T:8 Bars - Jimmy Lyons'
 L:1/8
-Q:1/2=120
 M:2/2
-K:D
+K:A
 V:1 treble 
 V:1
- gf)e(d Bc)d(e |  f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |  gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`];
+A2 |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;

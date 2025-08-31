@@ -64,244 +64,354 @@
         }
     </style>
     <script>
-        const render_abc = [`X:25
-T:The Silver Spear
-R:reel
+        const render_abc = [`X:35
+T:Paddy Clancy's
 L:1/8
-M:2/2
-Q:1/2=120
+M:6/8
+Q:3/8=130
 K:D
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 |
-(FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | !turn!(g3 e) !turn!(f3 e) |1 dfed({Bd)} B2 AG :|2 dfed({Bd)} B2 A2 ||:
-(f2 a)(f b)(fa)(f |{/a} gf)e(d Bc)d(e | f2) af bfa(f |{/a} gf)ed{Bd} B2 A2 |
-(f2 a)(f b)(fa)(f |{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) |1 dfed{Bd} B2 A2 :|2 dfed B2 AG | [DA]4|]`,
+fg |: afd ed(B | d)cB AFA | !turn!d3 ed(e | f)gf efg |
+afd ed(B | d)cB AFA | !turn!d3 ef(g |1 f)dc dfg :|2  f)dc d2e ||:
+faf gbg | faf{/a} (fed) | !turn!f3 gfg | afd{ef}(e2 d) |
+fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 e |
+faf gbg | faf{/a} (fed) | !turn!f3 gfg | af(d {/e}d)BA |
+fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 :|`,
 `X:1
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
+fg | afd ed(B | d)cB AFA | !turn!d3 ed(e | f)gf efg |`,
 `X:2
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
+ afd ed(B | d)cB AFA | !turn!d3 ef(g | f)dc dfg |`,
 `X:3
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
+afd ed(B | d)cB AFA | !turn!d3 ed(e | f)gf efg |`,
 `X:4
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 || (f2 a)(f b)(fa)(f |`,
+ afd ed(B | d)cB AFA | !turn!d3 ef(g | f)dc d2 e ||`,
 `X:5
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
+ faf gbg | faf{/a} (fed) | !turn!f3 gfg | afd{ef} (e2 d) |`,
 `X:6
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 | (f2 a)(f b)(fa)(f |`,
+ fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 e |`,
 `X:7
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e |  f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
+ faf gbg | faf{/a} (fed) | !turn!f3 gfg | af(d{/e} d)BA |`,
 `X:8
-T:4 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`,
+ fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 |`,
+`X:9
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+faf gbg | faf{/a} (fed) | !turn!f3 gfg |  afd{ef} (e2 d) |`,
+`X:10
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 e |`,
+`X:11
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+faf gbg | faf{/a} (fed) | !turn!f3 gfg | af(d{/e} d)BA |`,
+`X:12
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 |]`,
 `X:1
-T:8 Bars - The Silver Spear
+T:8 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
+fg | afd ed(B | d)cB AFA | !turn!d3 ed(e | f)gf efg |  afd ed(B | d)cB AFA | !turn!d3 ef(g | f)dc dfg |`,
 `X:2
-T:8 Bars - The Silver Spear
+T:8 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 || (f2 a)(f b)(fa)(f |`,
+afd ed(B | d)cB AFA | !turn!d3 ed(e | f)gf efg |  afd ed(B | d)cB AFA | !turn!d3 ef(g | f)dc d2 e ||`,
 `X:3
-T:8 Bars - The Silver Spear
+T:8 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f | {/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 | (f2 a)(f b)(fa)(f |`,
+ faf gbg | faf{/a} (fed) | !turn!f3 gfg | afd{ef} (e2 d) |  fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 e |`,
 `X:4
-T:8 Bars - The Silver Spear
+T:8 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e |  f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f | {/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`];
-        const audio_abc = [`X:25
-T:The Silver Spear
-R:reel
-L:1/8
-M:2/2
-Q:1/2=120
-K:D
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 |
-(FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) |1 dfed( B2 AG :|2 dfed( B2 A2 ||:
-(f2 a)(f b)(fa)(f | gf)e(d Bc)d(e | f2) af bfa(f | gf)ed B2 A2 |
-(f2 a)(f b)(fa)(f | gf)e(d Bd)ef | (g3 e) (f3 e) |1 dfed B2 A2 :|2 dfed B2 AG | [DA]4|]`,
-`X:1
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
-`X:2
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
-`X:3
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-dfe(d Bc)dA |  (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
-`X:4
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 || (f2 a)(f b)(fa)(f |`,
+ faf gbg | faf{/a} (fed) | !turn!f3 gfg | af(d{/e} d)BA |  fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 |`,
 `X:5
-T:4 Bars - The Silver Spear
+T:8 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
+faf gbg | faf{/a} (fed) | !turn!f3 gfg |  afd{ef} (e2 d) |  fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 e |`,
 `X:6
-T:4 Bars - The Silver Spear
+T:8 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 | (f2 a)(f b)(fa)(f |`,
-`X:7
-T:4 Bars - The Silver Spear
+faf gbg | faf{/a} (fed) | !turn!f3 gfg | af(d{/e} d)BA |  fa(f{/a} g)bg | fa(f{/a} f)ed | !turn!f3 ede | fdc d2 |]`];
+        const audio_abc = [`X:35
+T:Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+M:6/8
+Q:3/8=130
 K:D
-V:1 treble 
-V:1
- gf)e(d Bc)d(e |  f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
-`X:8
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
- gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`,
+fg |: afd ed(B | d)cB AFA | d3 ed(e | f)gf efg |
+afd ed(B | d)cB AFA | d3 ef(g |1 f)dc dfg :|2  f)dc d2e ||:
+faf gbg | faf (fed) | f3 gfg | afd(e2 d) |
+fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 e |
+faf gbg | faf (fed) | f3 gfg | af(d d)BA |
+fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 :|`,
 `X:1
-T:8 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
+fg | afd ed(B | d)cB AFA | d3 ed(e | f)gf efg |`,
 `X:2
-T:8 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 || (f2 a)(f b)(fa)(f |`,
+ afd ed(B | d)cB AFA | d3 ef(g | f)dc dfg |`,
 `X:3
-T:8 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |  gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 | (f2 a)(f b)(fa)(f |`,
+afd ed(B | d)cB AFA | d3 ed(e | f)gf efg |`,
 `X:4
-T:8 Bars - The Silver Spear
+T:4 Bars - Paddy Clancy's
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bc)d(e |  f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |  gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`];
+ afd ed(B | d)cB AFA | d3 ef(g | f)dc d2 e ||`,
+`X:5
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faf gbg | faf (fed) | f3 gfg | afd (e2 d) |`,
+`X:6
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 e |`,
+`X:7
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faf gbg | faf (fed) | f3 gfg | af(d d)BA |`,
+`X:8
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 |`,
+`X:9
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+faf gbg | faf (fed) | f3 gfg |  afd (e2 d) |`,
+`X:10
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 e |`,
+`X:11
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+faf gbg | faf (fed) | f3 gfg | af(d d)BA |`,
+`X:12
+T:4 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 |]`,
+`X:1
+T:8 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fg | afd ed(B | d)cB AFA | d3 ed(e | f)gf efg |  afd ed(B | d)cB AFA | d3 ef(g | f)dc dfg |`,
+`X:2
+T:8 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+afd ed(B | d)cB AFA | d3 ed(e | f)gf efg |  afd ed(B | d)cB AFA | d3 ef(g | f)dc d2 e ||`,
+`X:3
+T:8 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faf gbg | faf (fed) | f3 gfg | afd (e2 d) |  fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 e |`,
+`X:4
+T:8 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ faf gbg | faf (fed) | f3 gfg | af(d d)BA |  fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 |`,
+`X:5
+T:8 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+faf gbg | faf (fed) | f3 gfg |  afd (e2 d) |  fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 e |`,
+`X:6
+T:8 Bars - Paddy Clancy's
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+faf gbg | faf (fed) | f3 gfg | af(d d)BA |  fa(f g)bg | fa(f f)ed | f3 ede | fdc d2 |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;

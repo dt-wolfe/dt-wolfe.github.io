@@ -64,244 +64,412 @@
         }
     </style>
     <script>
-        const render_abc = [`X:25
-T:The Silver Spear
-R:reel
+        const render_abc = [`X:32
+T:The Lark In The Morning
 L:1/8
-M:2/2
-Q:1/2=120
+M:6/8
+Q:3/8=130
 K:D
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 |
-(FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | !turn!(g3 e) !turn!(f3 e) |1 dfed({Bd)} B2 AG :|2 dfed({Bd)} B2 A2 ||:
-(f2 a)(f b)(fa)(f |{/a} gf)e(d Bc)d(e | f2) af bfa(f |{/a} gf)ed{Bd} B2 A2 |
-(f2 a)(f b)(fa)(f |{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) |1 dfed{Bd} B2 A2 :|2 dfed B2 AG | [DA]4|]`,
+AFA AF(A | B)GB Bd(B | A)FA Ad(e |{/a}}f)ed Bd(B | A)FA AF(A |
+B)GB BA(B | d)ef afe |1 fdB BdB :|2fdB BAB ||:
+def a2 (a | b)af afe | def afe | fdB BAB |
+def a2 (a | b)af a2 (f |!turn!g3) !turn!f3 | edB BAB ::
+de(f{/a} f)ef | fe(f{/a} f)ef | de(f{/a} f)ef | ed(B{/d} B)AB |
+de(f{/a} f)ef | fe(f{/a} f)ef | !turn!g3 !turn!f3 | edB BAB :|
+Add fdd | ed(e f)dB | Add fdd |(e{/a}fe) ed(B |
+A)dd fdd | ede fef | !turn!g3 !turn!f3 |1 edB BAB :|2 edB BdB || [DA]6 |]`,
 `X:1
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
+AFA AF(A | B)GB Bd(B | A)FA Ad(e | {/a} f)ed Bd(B | A)FA AF(A |`,
 `X:2
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
+ B)GB BA(B | d)ef afe | fdB BdB | [Q:3/8=130] AFA AF(A |`,
 `X:3
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA |`,
+B)GB Bd(B | A)FA Ad(e | {/a} f)ed Bd(B |  A)FA AF(A |`,
 `X:4
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 || (f2 a)(f b)(fa)(f |`,
+ B)GB BA(B | d)ef afe | fdB BAB ||  def a2 (a |`,
 `X:5
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
+b)af afe | def afe | fdB BAB |  def a2 (a |`,
 `X:6
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 | (f2 a)(f b)(fa)(f |`,
+b)af a2 (f | !turn!g3) !turn!f3 | edB BAB |  def a2 (a |`,
 `X:7
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e |  f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f |`,
+b)af afe | def afe | fdB BAB |  def a2 (a |`,
 `X:8
-T:4 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`,
+b)af a2 (f | !turn!g3) !turn!f3 | edB BAB |  de(f{/a} f)ef |`,
+`X:9
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f{/a} f)ef | de(f{/a} f)ef | ed(B{/d} B)AB |  de(f{/a} f)ef |`,
+`X:10
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f{/a} f)ef | !turn!g3 !turn!f3 | edB BAB |  de(f{/a} f)ef |`,
+`X:11
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f{/a} f)ef | de(f{/a} f)ef | ed(B{/d} B)AB |  de(f{/a} f)ef |`,
+`X:12
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f{/a} f)ef | !turn!g3 !turn!f3 | edB BAB |  Add fdd |`,
+`X:13
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ed(e f)dB | Add fdd | (e{/a}fe) ed(B |  A)dd fdd |`,
+`X:14
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ede fef | !turn!g3 !turn!f3 | edB BdB || [DA]6 |]`,
 `X:1
-T:8 Bars - The Silver Spear
+T:8 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-(FA) (3AA(A{/d} BA)FA | dfe(d Bc)dA | (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 AG | [Q:1/2=120] (FA) (3AA(A{/d} BA)FA |`,
+AFA AF(A | B)GB Bd(B | A)FA Ad(e | {/a} f)ed Bd(B | A)FA AF(A |  B)GB BA(B | d)ef afe | fdB BdB | [Q:3/8=130] AFA AF(A |`,
 `X:2
-T:8 Bars - The Silver Spear
+T:8 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A{/d} BA)FA | dfed{Bd} B2 A2 | (FA) (3AA(A{/d} BA)FA | dfe(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 || (f2 a)(f b)(fa)(f |`,
+B)GB Bd(B | A)FA Ad(e | {/a} f)ed Bd(B |  A)FA AF(A |  B)GB BA(B | d)ef afe | fdB BAB ||  def a2 (a |`,
 `X:3
-T:8 Bars - The Silver Spear
+T:8 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e | f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f | {/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed{Bd} B2 A2 | (f2 a)(f b)(fa)(f |`,
+b)af afe | def afe | fdB BAB |  def a2 (a | b)af a2 (f | !turn!g3) !turn!f3 | edB BAB |  def a2 (a |`,
 `X:4
-T:8 Bars - The Silver Spear
+T:8 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-{/a} gf)e(d Bc)d(e |  f2) af bfa(f | {/a} gf)ed{Bd} B2 A2 |  (f2 a)(f b)(fa)(f | {/a} gf)e(d Bd)ef | (!turn!g3 e) (!turn!f3 e) | dfed B2 AG | [DA]4 |]`];
-        const audio_abc = [`X:25
-T:The Silver Spear
-R:reel
-L:1/8
-M:2/2
-Q:1/2=120
-K:D
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 |
-(FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) |1 dfed( B2 AG :|2 dfed( B2 A2 ||:
-(f2 a)(f b)(fa)(f | gf)e(d Bc)d(e | f2) af bfa(f | gf)ed B2 A2 |
-(f2 a)(f b)(fa)(f | gf)e(d Bd)ef | (g3 e) (f3 e) |1 dfed B2 A2 :|2 dfed B2 AG | [DA]4|]`,
-`X:1
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
-`X:2
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
-`X:3
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-dfe(d Bc)dA |  (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA |`,
-`X:4
-T:4 Bars - The Silver Spear
-L:1/8
-Q:1/2=120
-M:2/2
-K:D
-V:1 treble 
-V:1
-dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 || (f2 a)(f b)(fa)(f |`,
+b)af afe | def afe | fdB BAB |  def a2 (a | b)af a2 (f | !turn!g3) !turn!f3 | edB BAB |  de(f{/a} f)ef |`,
 `X:5
-T:4 Bars - The Silver Spear
+T:8 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
+fe(f{/a} f)ef | de(f{/a} f)ef | ed(B{/d} B)AB |  de(f{/a} f)ef | fe(f{/a} f)ef | !turn!g3 !turn!f3 | edB BAB |  de(f{/a} f)ef |`,
 `X:6
-T:4 Bars - The Silver Spear
+T:8 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 | (f2 a)(f b)(fa)(f |`,
+fe(f{/a} f)ef | de(f{/a} f)ef | ed(B{/d} B)AB |  de(f{/a} f)ef | fe(f{/a} f)ef | !turn!g3 !turn!f3 | edB BAB |  Add fdd |`,
 `X:7
-T:4 Bars - The Silver Spear
+T:8 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bc)d(e |  f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |`,
-`X:8
-T:4 Bars - The Silver Spear
+ed(e f)dB | Add fdd | (e{/a}fe) ed(B |  A)dd fdd | ede fef | !turn!g3 !turn!f3 | edB BdB || [DA]6 |]`];
+        const audio_abc = [`X:32
+T:The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+M:6/8
+Q:3/8=130
 K:D
-V:1 treble 
-V:1
- gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`,
+AFA AF(A | B)GB Bd(B | A)FA Ad(e |}f)ed Bd(B | A)FA AF(A |
+B)GB BA(B | d)ef afe |1 fdB BdB :|2fdB BAB ||:
+def a2 (a | b)af afe | def afe | fdB BAB |
+def a2 (a | b)af a2 (f |g3) f3 | edB BAB ::
+de(f f)ef | fe(f f)ef | de(f f)ef | ed(B B)AB |
+de(f f)ef | fe(f f)ef | g3 f3 | edB BAB :|
+Add fdd | ed(e f)dB | Add fdd |(efe) ed(B |
+A)dd fdd | ede fef | g3 f3 |1 edB BAB :|2 edB BdB || [DA]6 |]`,
 `X:1
-T:8 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-(FA) (3AA(A BA)FA | dfe(d Bc)dA | (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [Q:1/2=120] (FA) (3AA(A BA)FA |`,
+AFA AF(A | B)GB Bd(B | A)FA Ad(e |  f)ed Bd(B | A)FA AF(A |`,
 `X:2
-T:8 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
-dfe(d Bc)dA |  (FA) (3AA(A BA)FA | dfed B2 A2 | (FA) (3AA(A BA)FA | dfe(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 || (f2 a)(f b)(fa)(f |`,
+ B)GB BA(B | d)ef afe | fdB BdB | [Q:3/8=130] AFA AF(A |`,
 `X:3
-T:8 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bc)d(e | f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |  gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 A2 | (f2 a)(f b)(fa)(f |`,
+B)GB Bd(B | A)FA Ad(e |  f)ed Bd(B |  A)FA AF(A |`,
 `X:4
-T:8 Bars - The Silver Spear
+T:4 Bars - The Lark In The Morning
 L:1/8
-Q:1/2=120
-M:2/2
+Q:3/8=130
+M:6/8
 K:D
 V:1 treble 
 V:1
- gf)e(d Bc)d(e |  f2) af bfa(f |  gf)ed B2 A2 |  (f2 a)(f b)(fa)(f |  gf)e(d Bd)ef | (g3 e) (f3 e) | dfed B2 AG | [DA]4 |]`];
+ B)GB BA(B | d)ef afe | fdB BAB ||  def a2 (a |`,
+`X:5
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)af afe | def afe | fdB BAB |  def a2 (a |`,
+`X:6
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)af a2 (f | g3) f3 | edB BAB |  def a2 (a |`,
+`X:7
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)af afe | def afe | fdB BAB |  def a2 (a |`,
+`X:8
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)af a2 (f | g3) f3 | edB BAB |  de(f f)ef |`,
+`X:9
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f f)ef | de(f f)ef | ed(B B)AB |  de(f f)ef |`,
+`X:10
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f f)ef | g3 f3 | edB BAB |  de(f f)ef |`,
+`X:11
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f f)ef | de(f f)ef | ed(B B)AB |  de(f f)ef |`,
+`X:12
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f f)ef | g3 f3 | edB BAB |  Add fdd |`,
+`X:13
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ed(e f)dB | Add fdd | (efe) ed(B |  A)dd fdd |`,
+`X:14
+T:4 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ede fef | g3 f3 | edB BdB || [DA]6 |]`,
+`X:1
+T:8 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+AFA AF(A | B)GB Bd(B | A)FA Ad(e |  f)ed Bd(B | A)FA AF(A |  B)GB BA(B | d)ef afe | fdB BdB | [Q:3/8=130] AFA AF(A |`,
+`X:2
+T:8 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+B)GB Bd(B | A)FA Ad(e |  f)ed Bd(B |  A)FA AF(A |  B)GB BA(B | d)ef afe | fdB BAB ||  def a2 (a |`,
+`X:3
+T:8 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)af afe | def afe | fdB BAB |  def a2 (a | b)af a2 (f | g3) f3 | edB BAB |  def a2 (a |`,
+`X:4
+T:8 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+b)af afe | def afe | fdB BAB |  def a2 (a | b)af a2 (f | g3) f3 | edB BAB |  de(f f)ef |`,
+`X:5
+T:8 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f f)ef | de(f f)ef | ed(B B)AB |  de(f f)ef | fe(f f)ef | g3 f3 | edB BAB |  de(f f)ef |`,
+`X:6
+T:8 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+fe(f f)ef | de(f f)ef | ed(B B)AB |  de(f f)ef | fe(f f)ef | g3 f3 | edB BAB |  Add fdd |`,
+`X:7
+T:8 Bars - The Lark In The Morning
+L:1/8
+Q:3/8=130
+M:6/8
+K:D
+V:1 treble 
+V:1
+ed(e f)dB | Add fdd | (efe) ed(B |  A)dd fdd | ede fef | g3 f3 | edB BdB || [DA]6 |]`];
         let currentTune = 0;
         let hiddenMeasures = 0;
         let totalMeasures = 0;
