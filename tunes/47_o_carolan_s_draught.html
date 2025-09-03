@@ -98,532 +98,534 @@
         //hide mem trainer until code is updated
         document.querySelector(".memorytrainer")?.classList.toggle("hide-active");
         //Init vars
-        const render_abc = [`X:13
-T:Ballydesmond Polka - No. 1
-R:polka
+        const render_abc = [`X:47
+T:O'Carolan's Draught
 L:1/8
-M:2/4
-Q:1/4=138
+M:2/2
+Q:1/2=80
 K:G
-(G/ |: EA)(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |
-(EA)(AB) | (cd) e(e/f/ | ge)(dB) |1 A2 A>(G :|2 A2 A2 ||:
-a2 a>(b | a)gef | g2 g>(a | g)ede |
-a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 :|`
+GA B(c d)(ef)d | g2 (fe) d2 d2 | e4 d4 | (c2{dc} B)(c A)(cB)A |[K:G] GA B(c d)(ef)d | (gf)ed (^cb)ag | 
+gfed A2 ^c2 | d3 (e dc)BA | GA B(c d)(ef)d | g2 (fe) d2 d2 | eGce dGBd | (c2{dc} B)(c A)(cB)A | 
+GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d6 (fg) || (af)ga (ba)gf | (eg)fe (ed)cB | 
+ede(f{/a} gf)ga | bag(f e)(fg)a |[K:G] bBbB aBaB | gBgB fBfB | ede(f{/a} gf)ed | e2 e2 e3 (f | 
+gf)ed cBAG | e2 d2 d3 B | c2 B2 A2 G2 | FGAF D3 D | (EF)GE (FG)AF | (GA)BG (AB)cA | d2 g2 (ba)gf | 
+g2{/a} (gf) g4 |]`
 ,`X:1
-T:1 - 2 Bars - Ballydesmond Polka - No. 1
+T:1 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) |`
+GA B(c d)(ef)d | g2 (fe) d2 d2 |`
 ,`X:1
-T:2 - 2 Bars - Ballydesmond Polka - No. 1
+T:2 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-G2 G>(A | G)(E{/G}ED) |`
+e4 d4 | (c2{dc} B)(c A)(cB)A |`
 ,`X:1
-T:1 - 4 Bars - Ballydesmond Polka - No. 1
+T:1 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |`
+GA B(c d)(ef)d | g2 (fe) d2 d2 | e4 d4 | (c2{dc} B)(c A)(cB)A |`
 ,`X:1
-T:3 - 2 Bars - Ballydesmond Polka - No. 1
+T:3 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ |`
+ GA B(c d)(ef)d | (gf)ed (^cb)ag |`
 ,`X:1
-T:4 - 2 Bars - Ballydesmond Polka - No. 1
+T:4 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A>G |`
+gfed A2 ^c2 | d3 (e dc)BA |`
 ,`X:1
-T:2 - 4 Bars - Ballydesmond Polka - No. 1
+T:2 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
+ GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d3 (e dc)BA |`
 ,`X:1
-T:1 - 8 Bars - Ballydesmond Polka - No. 1
+T:1 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
+GA B(c d)(ef)d | g2 (fe) d2 d2 | e4 d4 | (c2{dc} B)(c A)(cB)A |  GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d3 (e dc)BA |`
 ,`X:1
-T:5 - 2 Bars - Ballydesmond Polka - No. 1
+T:5 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) |`
+ GA B(c d)(ef)d | g2 (fe) d2 d2 |`
 ,`X:1
-T:6 - 2 Bars - Ballydesmond Polka - No. 1
+T:6 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-G2 G>(A | G)(E{/G}ED) |`
+eGce dGBd | (c2{dc} B)(c A)(cB)A |`
 ,`X:1
-T:3 - 4 Bars - Ballydesmond Polka - No. 1
+T:3 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |`
+ GA B(c d)(ef)d | g2 (fe) d2 d2 | eGce dGBd | (c2{dc} B)(c A)(cB)A |`
 ,`X:1
-T:7 - 2 Bars - Ballydesmond Polka - No. 1
+T:7 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ |`
+GA B(c d)(ef)d | (gf)ed (^cb)ag |`
 ,`X:1
-T:8 - 2 Bars - Ballydesmond Polka - No. 1
+T:8 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 ||`
+gfed A2 ^c2 | d6 (fg) ||`
 ,`X:1
-T:4 - 4 Bars - Ballydesmond Polka - No. 1
+T:4 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
+GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d6 (fg) ||`
 ,`X:1
-T:2 - 8 Bars - Ballydesmond Polka - No. 1
+T:2 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
+ GA B(c d)(ef)d | g2 (fe) d2 d2 | eGce dGBd | (c2{dc} B)(c A)(cB)A | GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d6 (fg) ||`
 ,`X:1
-T:9 - 2 Bars - Ballydesmond Polka - No. 1
+T:9 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef |`
+ (af)ga (ba)gf | (eg)fe (ed)cB |`
 ,`X:1
-T:10 - 2 Bars - Ballydesmond Polka - No. 1
+T:10 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-g2 g>(a | g)ede |`
+ede(f{/a} gf)ga | bag(f e)(fg)a |`
 ,`X:1
-T:5 - 4 Bars - Ballydesmond Polka - No. 1
+T:5 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
+ (af)ga (ba)gf | (eg)fe (ed)cB | ede(f{/a} gf)ga | bag(f e)(fg)a |`
 ,`X:1
-T:11 - 2 Bars - Ballydesmond Polka - No. 1
+T:11 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ |`
+ bBbB aBaB | gBgB fBfB |`
 ,`X:1
-T:12 - 2 Bars - Ballydesmond Polka - No. 1
+T:12 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 |`
+ede(f{/a} gf)ed | e2 e2 e3 (f |`
 ,`X:1
-T:6 - 4 Bars - Ballydesmond Polka - No. 1
+T:6 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
+ bBbB aBaB | gBgB fBfB | ede(f{/a} gf)ed | e2 e2 e3 (f |`
 ,`X:1
-T:3 - 8 Bars - Ballydesmond Polka - No. 1
+T:3 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
+ (af)ga (ba)gf | (eg)fe (ed)cB | ede(f{/a} gf)ga | bag(f e)(fg)a |  bBbB aBaB | gBgB fBfB | ede(f{/a} gf)ed | e2 e2 e3 (f |`
 ,`X:1
-T:13 - 2 Bars - Ballydesmond Polka - No. 1
+T:13 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef |`
+gf)ed cBAG | e2 d2 d3 B |`
 ,`X:1
-T:14 - 2 Bars - Ballydesmond Polka - No. 1
+T:14 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-g2 g>(a | g)ede |`
+c2 B2 A2 G2 | FGAF D3 D |`
 ,`X:1
-T:7 - 4 Bars - Ballydesmond Polka - No. 1
+T:7 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
+gf)ed cBAG | e2 d2 d3 B | c2 B2 A2 G2 | FGAF D3 D |`
 ,`X:1
-T:15 - 2 Bars - Ballydesmond Polka - No. 1
+T:15 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ |`
+ (EF)GE (FG)AF | (GA)BG (AB)cA |`
 ,`X:1
-T:16 - 2 Bars - Ballydesmond Polka - No. 1
+T:16 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 |]`
+d2 g2 (ba)gf | g2{/a} (gf) g4 |]`
 ,`X:1
-T:8 - 4 Bars - Ballydesmond Polka - No. 1
+T:8 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`
+ (EF)GE (FG)AF | (GA)BG (AB)cA | d2 g2 (ba)gf | g2{/a} (gf) g4 |]`
 ,`X:1
-T:4 - 8 Bars - Ballydesmond Polka - No. 1
+T:4 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`];
-        const audio_abc = [`X:13
-T:Ballydesmond Polka - No. 1
-R:polka
+gf)ed cBAG | e2 d2 d3 B | c2 B2 A2 G2 | FGAF D3 D |  (EF)GE (FG)AF | (GA)BG (AB)cA | d2 g2 (ba)gf | g2{/a} (gf) g4 |]`];
+        const audio_abc = [`X:47
+T:O'Carolan's Draught
 L:1/8
-M:2/4
-Q:1/4=138
+M:2/2
+Q:1/2=80
 K:G
-(G/ |: EA)(AB) | (cd)(eg) | G2 G>(A | G)(EED) |
-(EA)(AB) | (cd) e(e/f/ | ge)(dB) |1 A2 A>(G :|2 A2 A2 ||:
-a2 a>(b | a)gef | g2 g>(a | g)ede |
-a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 :|`
+GA B(c d)(ef)d | g2 (fe) d2 d2 | e4 d4 | (c2 B)(c A)(cB)A |[K:G] GA B(c d)(ef)d | (gf)ed (^cb)ag | 
+gfed A2 ^c2 | d3 (e dc)BA | GA B(c d)(ef)d | g2 (fe) d2 d2 | eGce dGBd | (c2 B)(c A)(cB)A | 
+GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d6 (fg) || (af)ga (ba)gf | (eg)fe (ed)cB | 
+ede(f gf)ga | bag(f e)(fg)a |[K:G] bBbB aBaB | gBgB fBfB | ede(f gf)ed | e2 e2 e3 (f | 
+gf)ed cBAG | e2 d2 d3 B | c2 B2 A2 G2 | FGAF D3 D | (EF)GE (FG)AF | (GA)BG (AB)cA | d2 g2 (ba)gf | 
+g2 (gf) g4 |]`
 ,`X:1
-T:1 - 2 Bars - Ballydesmond Polka - No. 1
+T:1 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) |`
+GA B(c d)(ef)d | g2 (fe) d2 d2 |`
 ,`X:1
-T:2 - 2 Bars - Ballydesmond Polka - No. 1
+T:2 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-G2 G>(A | G)(EED) |`
+e4 d4 | (c2 B)(c A)(cB)A |`
 ,`X:1
-T:1 - 4 Bars - Ballydesmond Polka - No. 1
+T:1 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(EED) |`
+GA B(c d)(ef)d | g2 (fe) d2 d2 | e4 d4 | (c2 B)(c A)(cB)A |`
 ,`X:1
-T:3 - 2 Bars - Ballydesmond Polka - No. 1
+T:3 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ |`
+ GA B(c d)(ef)d | (gf)ed (^cb)ag |`
 ,`X:1
-T:4 - 2 Bars - Ballydesmond Polka - No. 1
+T:4 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A>G |`
+gfed A2 ^c2 | d3 (e dc)BA |`
 ,`X:1
-T:2 - 4 Bars - Ballydesmond Polka - No. 1
+T:2 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
+ GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d3 (e dc)BA |`
 ,`X:1
-T:1 - 8 Bars - Ballydesmond Polka - No. 1
+T:1 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(EED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
+GA B(c d)(ef)d | g2 (fe) d2 d2 | e4 d4 | (c2 B)(c A)(cB)A |  GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d3 (e dc)BA |`
 ,`X:1
-T:5 - 2 Bars - Ballydesmond Polka - No. 1
+T:5 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) |`
+ GA B(c d)(ef)d | g2 (fe) d2 d2 |`
 ,`X:1
-T:6 - 2 Bars - Ballydesmond Polka - No. 1
+T:6 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-G2 G>(A | G)(EED) |`
+eGce dGBd | (c2 B)(c A)(cB)A |`
 ,`X:1
-T:3 - 4 Bars - Ballydesmond Polka - No. 1
+T:3 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(EED) |`
+ GA B(c d)(ef)d | g2 (fe) d2 d2 | eGce dGBd | (c2 B)(c A)(cB)A |`
 ,`X:1
-T:7 - 2 Bars - Ballydesmond Polka - No. 1
+T:7 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ |`
+GA B(c d)(ef)d | (gf)ed (^cb)ag |`
 ,`X:1
-T:8 - 2 Bars - Ballydesmond Polka - No. 1
+T:8 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 ||`
+gfed A2 ^c2 | d6 (fg) ||`
 ,`X:1
-T:4 - 4 Bars - Ballydesmond Polka - No. 1
+T:4 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
+GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d6 (fg) ||`
 ,`X:1
-T:2 - 8 Bars - Ballydesmond Polka - No. 1
+T:2 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(EED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
+ GA B(c d)(ef)d | g2 (fe) d2 d2 | eGce dGBd | (c2 B)(c A)(cB)A | GA B(c d)(ef)d | (gf)ed (^cb)ag | gfed A2 ^c2 | d6 (fg) ||`
 ,`X:1
-T:9 - 2 Bars - Ballydesmond Polka - No. 1
+T:9 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef |`
+ (af)ga (ba)gf | (eg)fe (ed)cB |`
 ,`X:1
-T:10 - 2 Bars - Ballydesmond Polka - No. 1
+T:10 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-g2 g>(a | g)ede |`
+ede(f gf)ga | bag(f e)(fg)a |`
 ,`X:1
-T:5 - 4 Bars - Ballydesmond Polka - No. 1
+T:5 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
+ (af)ga (ba)gf | (eg)fe (ed)cB | ede(f gf)ga | bag(f e)(fg)a |`
 ,`X:1
-T:11 - 2 Bars - Ballydesmond Polka - No. 1
+T:11 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ |`
+ bBbB aBaB | gBgB fBfB |`
 ,`X:1
-T:12 - 2 Bars - Ballydesmond Polka - No. 1
+T:12 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 |`
+ede(f gf)ed | e2 e2 e3 (f |`
 ,`X:1
-T:6 - 4 Bars - Ballydesmond Polka - No. 1
+T:6 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
+ bBbB aBaB | gBgB fBfB | ede(f gf)ed | e2 e2 e3 (f |`
 ,`X:1
-T:3 - 8 Bars - Ballydesmond Polka - No. 1
+T:3 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
+ (af)ga (ba)gf | (eg)fe (ed)cB | ede(f gf)ga | bag(f e)(fg)a |  bBbB aBaB | gBgB fBfB | ede(f gf)ed | e2 e2 e3 (f |`
 ,`X:1
-T:13 - 2 Bars - Ballydesmond Polka - No. 1
+T:13 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef |`
+gf)ed cBAG | e2 d2 d3 B |`
 ,`X:1
-T:14 - 2 Bars - Ballydesmond Polka - No. 1
+T:14 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-g2 g>(a | g)ede |`
+c2 B2 A2 G2 | FGAF D3 D |`
 ,`X:1
-T:7 - 4 Bars - Ballydesmond Polka - No. 1
+T:7 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
+gf)ed cBAG | e2 d2 d3 B | c2 B2 A2 G2 | FGAF D3 D |`
 ,`X:1
-T:15 - 2 Bars - Ballydesmond Polka - No. 1
+T:15 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ |`
+ (EF)GE (FG)AF | (GA)BG (AB)cA |`
 ,`X:1
-T:16 - 2 Bars - Ballydesmond Polka - No. 1
+T:16 - 2 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 |]`
+d2 g2 (ba)gf | g2 (gf) g4 |]`
 ,`X:1
-T:8 - 4 Bars - Ballydesmond Polka - No. 1
+T:8 - 4 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`
+ (EF)GE (FG)AF | (GA)BG (AB)cA | d2 g2 (ba)gf | g2 (gf) g4 |]`
 ,`X:1
-T:4 - 8 Bars - Ballydesmond Polka - No. 1
+T:4 - 8 Bars - O'Carolan's Draught
 L:1/8
-Q:1/4=138
-M:2/4
+Q:1/2=80
+M:2/2
 K:G
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`];
+gf)ed cBAG | e2 d2 d3 B | c2 B2 A2 G2 | FGAF D3 D |  (EF)GE (FG)AF | (GA)BG (AB)cA | d2 g2 (ba)gf | g2 (gf) g4 |]`];
 
         if (render_abc.length == 0) {
             render_abc.push(

@@ -98,532 +98,278 @@
         //hide mem trainer until code is updated
         document.querySelector(".memorytrainer")?.classList.toggle("hide-active");
         //Init vars
-        const render_abc = [`X:13
-T:Ballydesmond Polka - No. 1
-R:polka
+        const render_abc = [`X:48
+T:The Wounded Hussar
 L:1/8
-M:2/4
-Q:1/4=138
-K:G
-(G/ |: EA)(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |
-(EA)(AB) | (cd) e(e/f/ | ge)(dB) |1 A2 A>(G :|2 A2 A2 ||:
-a2 a>(b | a)gef | g2 g>(a | g)ede |
-a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 :|`
+M:6/8
+Q:3/8=60
+K:Bb
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) | 
+(DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | f>(ed){/e} (d/c/) (B/A/)G/F/ | D(G{AG}F) G2 (G/A/) || 
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) | d(!tenuto!g>!tenuto!g) gab | dg^f !fermata!g2 (g/a/) | bag fe(d | 
+{/e} d/c/)(B/A/) f !fermata!F2 (G/A/) | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) !fermata!G2 |]`
 ,`X:1
-T:1 - 2 Bars - Ballydesmond Polka - No. 1
+T:1 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) |`
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A |`
 ,`X:1
-T:2 - 2 Bars - Ballydesmond Polka - No. 1
+T:2 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-G2 G>(A | G)(E{/G}ED) |`
+(Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) |`
 ,`X:1
-T:1 - 4 Bars - Ballydesmond Polka - No. 1
+T:1 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |`
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) |`
 ,`X:1
-T:3 - 2 Bars - Ballydesmond Polka - No. 1
+T:3 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ |`
+(DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A |`
 ,`X:1
-T:4 - 2 Bars - Ballydesmond Polka - No. 1
+T:4 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-ge)(dB) | A2 A>G |`
+f>(ed){/e} (d/c/) (B/A/)G/F/ | D(G{AG}F) G2 (G/A/) ||`
 ,`X:1
-T:2 - 4 Bars - Ballydesmond Polka - No. 1
+T:2 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
+(DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | f>(ed){/e} (d/c/) (B/A/)G/F/ | D(G{AG}F) G2 (G/A/) ||`
 ,`X:1
-T:1 - 8 Bars - Ballydesmond Polka - No. 1
+T:1 - 8 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | f>(ed){/e} (d/c/) (B/A/)G/F/ | D(G{AG}F) G2 (G/A/) ||`
 ,`X:1
-T:5 - 2 Bars - Ballydesmond Polka - No. 1
+T:5 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) |`
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) |`
 ,`X:1
-T:6 - 2 Bars - Ballydesmond Polka - No. 1
+T:6 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-G2 G>(A | G)(E{/G}ED) |`
+d(!tenuto!g>!tenuto!g) gab | dg^f !fermata!g2 (g/a/) |`
 ,`X:1
-T:3 - 4 Bars - Ballydesmond Polka - No. 1
+T:3 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |`
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) | d(!tenuto!g>!tenuto!g) gab | dg^f !fermata!g2 (g/a/) |`
 ,`X:1
-T:7 - 2 Bars - Ballydesmond Polka - No. 1
+T:7 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ |`
+bag fe(d | {/e} d/c/)(B/A/) f !fermata!F2 (G/A/) |`
 ,`X:1
-T:8 - 2 Bars - Ballydesmond Polka - No. 1
+T:8 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 ||`
+(Bd)B (d/c/) (B/A/)G/F/ | D(GF) !fermata!G2 |]`
 ,`X:1
-T:4 - 4 Bars - Ballydesmond Polka - No. 1
+T:4 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
+bag fe(d | {/e} d/c/)(B/A/) f !fermata!F2 (G/A/) | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) !fermata!G2 |]`
 ,`X:1
-T:2 - 8 Bars - Ballydesmond Polka - No. 1
+T:2 - 8 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(E{/G}ED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
-,`X:1
-T:9 - 2 Bars - Ballydesmond Polka - No. 1
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) | d(!tenuto!g>!tenuto!g) gab | dg^f !fermata!g2 (g/a/) | bag fe(d | {/e} d/c/)(B/A/) f !fermata!F2 (G/A/) | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) !fermata!G2 |]`];
+        const audio_abc = [`X:48
+T:The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+M:6/8
+Q:3/8=60
+K:Bb
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) | 
+(DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | f>(ed) (d/c/) (B/A/)G/F/ | D(GF) G2 (G/A/) || 
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) | d(g>g) gab | dg^f g2 (g/a/) | bag fe(d | 
+ d/c/)(B/A/) f F2 (G/A/) | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 |]`
+,`X:1
+T:1 - 2 Bars - The Wounded Hussar
+L:1/8
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-a2 a>(b | a)gef |`
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A |`
 ,`X:1
-T:10 - 2 Bars - Ballydesmond Polka - No. 1
+T:2 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-g2 g>(a | g)ede |`
+(Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) |`
 ,`X:1
-T:5 - 4 Bars - Ballydesmond Polka - No. 1
+T:1 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) |`
 ,`X:1
-T:11 - 2 Bars - Ballydesmond Polka - No. 1
+T:3 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ |`
+(DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A |`
 ,`X:1
-T:12 - 2 Bars - Ballydesmond Polka - No. 1
+T:4 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 |`
+f>(ed) (d/c/) (B/A/)G/F/ | D(GF) G2 (G/A/) ||`
 ,`X:1
-T:6 - 4 Bars - Ballydesmond Polka - No. 1
+T:2 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
+(DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | f>(ed) (d/c/) (B/A/)G/F/ | D(GF) G2 (G/A/) ||`
 ,`X:1
-T:3 - 8 Bars - Ballydesmond Polka - No. 1
+T:1 - 8 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
+(G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 (G/F/) | (DG)A B2 (A/G/) | (A/B/)(c/B/)A/G/ (FG)A | f>(ed) (d/c/) (B/A/)G/F/ | D(GF) G2 (G/A/) ||`
 ,`X:1
-T:13 - 2 Bars - Ballydesmond Polka - No. 1
+T:5 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-a2 a>(b | a)gef |`
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) |`
 ,`X:1
-T:14 - 2 Bars - Ballydesmond Polka - No. 1
+T:6 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-g2 g>(a | g)ede |`
+d(g>g) gab | dg^f g2 (g/a/) |`
 ,`X:1
-T:7 - 4 Bars - Ballydesmond Polka - No. 1
+T:3 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) | d(g>g) gab | dg^f g2 (g/a/) |`
 ,`X:1
-T:15 - 2 Bars - Ballydesmond Polka - No. 1
+T:7 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ |`
+bag fe(d |  d/c/)(B/A/) f F2 (G/A/) |`
 ,`X:1
-T:16 - 2 Bars - Ballydesmond Polka - No. 1
+T:8 - 2 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-ge)(dB) | A2 A2 |]`
+(Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 |]`
 ,`X:1
-T:8 - 4 Bars - Ballydesmond Polka - No. 1
+T:4 - 4 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`
+bag fe(d |  d/c/)(B/A/) f F2 (G/A/) | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 |]`
 ,`X:1
-T:4 - 8 Bars - Ballydesmond Polka - No. 1
+T:2 - 8 Bars - The Wounded Hussar
 L:1/8
-Q:1/4=138
-M:2/4
-K:G
+Q:3/8=60
+M:6/8
+K:Bb
 V:1 treble 
 V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`];
-        const audio_abc = [`X:13
-T:Ballydesmond Polka - No. 1
-R:polka
-L:1/8
-M:2/4
-Q:1/4=138
-K:G
-(G/ |: EA)(AB) | (cd)(eg) | G2 G>(A | G)(EED) |
-(EA)(AB) | (cd) e(e/f/ | ge)(dB) |1 A2 A>(G :|2 A2 A2 ||:
-a2 a>(b | a)gef | g2 g>(a | g)ede |
-a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 :|`
-,`X:1
-T:1 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-(G/ | EA)(AB) | (cd)(eg) |`
-,`X:1
-T:2 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-G2 G>(A | G)(EED) |`
-,`X:1
-T:1 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(EED) |`
-,`X:1
-T:3 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- (EA)(AB) | (cd) e(e/f/ |`
-,`X:1
-T:4 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-ge)(dB) | A2 A>G |`
-,`X:1
-T:2 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
-,`X:1
-T:1 - 8 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-(G/ | EA)(AB) | (cd)(eg) | G2 G>(A | G)(EED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A>G |`
-,`X:1
-T:5 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-EA(AB) | (cd)(eg) |`
-,`X:1
-T:6 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-G2 G>(A | G)(EED) |`
-,`X:1
-T:3 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(EED) |`
-,`X:1
-T:7 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- (EA)(AB) | (cd) e(e/f/ |`
-,`X:1
-T:8 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-ge)(dB) | A2 A2 ||`
-,`X:1
-T:4 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
-,`X:1
-T:2 - 8 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-EA(AB) | (cd)(eg) | G2 G>(A | G)(EED) |  (EA)(AB) | (cd) e(e/f/ | ge)(dB) | A2 A2 ||`
-,`X:1
-T:9 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-a2 a>(b | a)gef |`
-,`X:1
-T:10 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-g2 g>(a | g)ede |`
-,`X:1
-T:5 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
-,`X:1
-T:11 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- a2 a>(b | a)(g e)(e/f/ |`
-,`X:1
-T:12 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-ge)(dB) | A2 A2 |`
-,`X:1
-T:6 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
-,`X:1
-T:3 - 8 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |`
-,`X:1
-T:13 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-a2 a>(b | a)gef |`
-,`X:1
-T:14 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-g2 g>(a | g)ede |`
-,`X:1
-T:7 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |`
-,`X:1
-T:15 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- a2 a>(b | a)(g e)(e/f/ |`
-,`X:1
-T:16 - 2 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-ge)(dB) | A2 A2 |]`
-,`X:1
-T:8 - 4 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
- a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`
-,`X:1
-T:4 - 8 Bars - Ballydesmond Polka - No. 1
-L:1/8
-Q:1/4=138
-M:2/4
-K:G
-V:1 treble 
-V:1
-a2 a>(b | a)gef | g2 g>(a | g)ede |  a2 a>(b | a)(g e)(e/f/ | ge)(dB) | A2 A2 |]`];
+(Bd)d d2 (c/B/) | (Ac)c c2 (f/e/) | d(g>g) gab | dg^f g2 (g/a/) | bag fe(d |  d/c/)(B/A/) f F2 (G/A/) | (Bd)B (d/c/) (B/A/)G/F/ | D(GF) G2 |]`];
 
         if (render_abc.length == 0) {
             render_abc.push(
